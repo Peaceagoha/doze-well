@@ -26,5 +26,19 @@
 }
 
 .nav-dot.active {
-  background-color: #391E8A;
+  background-color: #391e8a;
+}
+
+/* Preloader */
+.loader svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

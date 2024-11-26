@@ -3,24 +3,27 @@ import Avatar2 from "../assets/Ellipse-2.png";
 import Avatar3 from "../assets/Ellipse-3.png";
 import image1 from "../assets/amico.png";
 import image2 from "../assets/bro.png";
-import image3 from "../assets/sleep.png";
+// import image3 from "../assets/sleep.png";
 
-import Birds from "../assets/Birds.svg"
-import Rain from "../assets/Rain.svg"
-import Wind from "../assets/Wind.svg"
-import Synthwave from "../assets/Synthwave.svg"
-import Ocean from "../assets/Ocean.svg"
-import AutumnForest from "../assets/Autumn-forest.svg"
-import WaterDripping from "../assets/Water-dripping.svg"
-import Orchestral from "../assets/Orchestral.svg"
-import WaterFall from "../assets/Water-Fall.svg"
-import Thunder from "../assets/Thunder.svg"
-import Campfire from "../assets/Camp-fire.svg"
-import LakeShore from "../assets/Lake-shore.svg"
-import DeepBass from "../assets/Deep-Bass.svg"
-import WhiteNoise from "../assets/White-Noise.svg"
-import BrainScanner from "../assets/Brain-Scanner.svg"
-
+import Birds from "../assets/Birds.svg";
+import Rain from "../assets/Rain.svg";
+import Wind from "../assets/Wind.svg";
+import Synthwave from "../assets/Synthwave.svg";
+import Ocean from "../assets/Ocean.svg";
+import AutumnForest from "../assets/Autumn-forest.svg";
+import WaterDripping from "../assets/Water-dripping.svg";
+import Orchestral from "../assets/Orchestral.svg";
+import WaterFall from "../assets/Water-Fall.svg";
+import Thunder from "../assets/Thunder.svg";
+import Campfire from "../assets/Camp-fire.svg";
+import LakeShore from "../assets/Lake-shore.svg";
+import DeepBass from "../assets/Deep-Bass.svg";
+import WhiteNoise from "../assets/White-Noise.svg";
+import BrainScanner from "../assets/Brain-Scanner.svg";
+import Control from "../assets/Control.svg";
+import Download from "../assets/Download.svg";
+import Play from "../assets/Play.svg";
+import Timer from "../assets/Timer.svg";
 
 export const responsive = {
   superLargeDesktop: {
@@ -186,97 +189,114 @@ export const soundList = [
     id: 1,
     name: "Birds",
     image: Birds,
-    category: "birds"
+    category: "birds",
   },
   {
     id: 2,
     name: "Rain",
     image: Rain,
-    category: "rain"
+    category: "rain",
   },
   {
     id: 3,
     name: "Wind",
     image: Wind,
-    category: "wain"
+    category: "wain",
   },
-  
+
   {
     id: 4,
     name: "Synthwave",
     image: Synthwave,
-    category: "synthwave"
+    category: "synthwave",
   },
   {
     id: 5,
     name: "Ocean",
     image: Ocean,
-    category: "ocean"
+    category: "ocean",
   },
- 
+
   {
     id: 6,
     name: "Autumn Forest",
     image: AutumnForest,
-    category: "autumn forest"
+    category: "autumn forest",
   },
- 
+
   {
     id: 7,
     name: "Water Dripping",
     image: WaterDripping,
-    category: "water dripping"
+    category: "water dripping",
   },
   {
     id: 8,
     name: "Orchestral",
     image: Orchestral,
-    category: "orchestral"
+    category: "orchestral",
   },
   {
     id: 9,
     name: "Water Fall",
     image: WaterFall,
-    category: "waterfall"
+    category: "waterfall",
   },
- 
+
   {
     id: 10,
     name: "Thunder",
     image: Thunder,
-    category: "thunder"
+    category: "thunder",
   },
   {
     id: 11,
     name: "Camp Fire",
     image: Campfire,
-    category: "camp fire"
+    category: "camp fire",
   },
- 
+
   {
     id: 12,
     name: "Lake Shore",
     image: LakeShore,
-    category: "lake shore"
+    category: "lake shore",
   },
   {
     id: 13,
     name: "Deep Bass",
     image: DeepBass,
-    category: "deep bass"
+    category: "deep bass",
   },
   {
     id: 14,
     name: "White Noise",
     image: WhiteNoise,
-    category: "white noise"
+    category: "white noise",
   },
   {
     id: 15,
     name: "Brain Scanner",
     image: BrainScanner,
-    category: "brain scanner"
+    category: "brain scanner",
   },
- 
+];
 
-]
+export const playerTimer = [
+  {
+    title: "Play",
+    image: Play,
+  },
+  {
+    title: "Timer",
+    image: Timer,
+  },
+  {
+    title: "Save Mix",
+    image: Download,
+  },
+  {
+    title: "Control",
+    image: Control,
+  },
+];

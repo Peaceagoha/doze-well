@@ -1,8 +1,8 @@
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 import Slide1 from "../assets/Slide1.png";
 import Slide2 from "../assets/Slide2.png";
-import { commentsData, responsive, responsive2 } from "../data/data";
-import { useEffect, useState } from "react";
+// import { commentsData, responsive, responsive2 } from "../data/data";
+import { useState } from "react";
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,18 +13,18 @@ const ImageSlider = () => {
     setCurrentIndex(index);
   };
 
-  const handleAutoPlay = () => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIdex) => (prevIdex + 1) % images.length);
-    }, 1000);
+  // const handleAutoPlay = () => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentIndex((prevIdex) => (prevIdex + 1) % images.length);
+  //   }, 1000);
 
-    return () => clearInterval(intervalId);
-  };
+  //   return () => clearInterval(intervalId);
+  // };
 
-//   useEffect(() => {
-//     const intervalId = handleAutoPlay();
-//     // return () => clearInterval(intervalId);
-//   });
+  //   useEffect(() => {
+  //     const intervalId = handleAutoPlay();
+  //     // return () => clearInterval(intervalId);
+  //   });
 
   return (
     <section className="overflow-hidden relative w-full">
@@ -43,8 +43,8 @@ const ImageSlider = () => {
             className={`nav-dot w-3 h-3 bg-white rounded-full my-0 mx-1 cursor-pointer ${
               index === currentIndex ? "active" : ""
             }`}
-                onClick={() => handleNavDotClick(index)}
-                key={index}
+            onClick={() => handleNavDotClick(index)}
+            key={index}
           ></div>
         ))}
       </div>

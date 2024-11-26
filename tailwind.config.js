@@ -7,6 +7,7 @@ export default {
       "purple-dozewell-accent": "#391E8A",
       "purple-dozewell": "#7774A7",
       "purple-dark-dozewell": "#302D40",
+      "blue-card-bg": "#6B8DB1",
       "gray-light-dozewell": "#D9D9D9",
       "gray-dark-dozewell": "#424242",
       "dozwell-green": "rgba(43, 217, 168, 1)",
@@ -14,13 +15,13 @@ export default {
       black: "#000000",
     },
 
-    fontFamily: { 
+    fontFamily: {
       primary: ["Satoshi", "sans-serif"],
     },
     extend: {
       backgroundImage: {
         "dozewell-gradient": "linear-gradient(to bottom, #7774A7, #302D40)",
-        'hero-pattern': "url('/src/assets/100vh-Bg.png')",
+        "hero-pattern": "url('/src/assets/100vh-Bg.png')",
       },
     },
   },

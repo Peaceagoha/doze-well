@@ -66,26 +66,22 @@ const Auth = () => {
                   inputName="firstName"
                   inputType="text"
                   inputPlaceholder="first name"
-         
                 />
                 <Input
                   inputName="lastName"
                   inputType="text"
                   inputPlaceholder="last name"
-              
                 />
               </div>
               <Input
                 inputName="email"
                 inputType="email"
                 inputPlaceholder="email"
-             
               />
               <Input
                 inputName="password"
                 inputType="password"
                 inputPlaceholder="password"
-                
               />
 
               <div className="flex w-full items-center justify-center p-5">
@@ -107,7 +103,6 @@ const Auth = () => {
                 inputValue="Create an account"
                 inputName="button"
                 inputType="button"
-            
               />
 
               <div className="flex w-full items-center justify-start p-5">
