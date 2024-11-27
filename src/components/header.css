@@ -1,0 +1,16 @@
+.container{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.nav__bar{
+    padding: 20px;
+}
+.doze__well{
+    font-size: 23px;
+}
+.nav__link{
+    color: hwb(0 87% 13%);
+    font-weight: 200;
+    display: flex;
+    gap: 20px;
+}
