@@ -221,7 +221,7 @@ import { NavLink, useNavigate, Link } from "react-router-dom";
 import MenuIcon from "../assets/menu_icon.png";
 import CloseIcon from "../assets/cross_icon.png";
 import { useState } from "react";
-
+import './header.css'
 const Header = () => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
@@ -234,12 +234,12 @@ const Header = () => {
   return (
     <section className="container w-full mx-auto">
       {/* Desktop and Mobile Header */}
-      <nav className="container mx-auto flex items-center justify-between bg-bg-primary px-5 py-5 sm:py-3 rounded-3xl">
-        <h1 className="text-purple-dozewell font-bold sm:text-md text-xl">
+      <nav className="nav__bar container mx-auto flex items-center justify-between bg-bg-primary px-8 py-9 sm:py-3 rounded-3xl">
+        <h1 className=" doze__well text-purple-dozewell font-bold sm:text-md text-xl ">
           DozeWell
         </h1>
         {/* Desktop Links */}
-        <ul className="hidden sm:flex text-white space-x-4">
+        <ul className="nav__link hidden sm:flex font-light  text-white space-x-9">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/features">Features</NavLink>
           <NavLink to="/how-it-works">How It Works</NavLink>
@@ -247,8 +247,8 @@ const Header = () => {
         </ul>
 
         {/* Desktop Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
-          <Link to="/userAuth" className="text-white">
+        <div className="hidden sm:flex  items-center gap-3">
+          <Link to="/userAuth" className="text-white font-light">
             Login
           </Link>
           <button
