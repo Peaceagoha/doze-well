@@ -132,14 +132,14 @@ const Hero = () => {
       <div className="flex flex-col items-center justify-center h-full px-6 sm:px-20 text-center sm:text-left">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
           <div className="flex-1 space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-bold text-white">
+            <h1 className="text-4xl sm:text-4xl font-bold text-white">
               Unlock the Power of Restful Sleep
             </h1>
-            <p className="text-white text-sm sm:text-base">
+            <p className="text-white text-sm sm:text-base opacity-75">
               Track, Improve, and Master Your Sleep Patterns
             </p>
           </div>
-          <div className="flex-1">
+          <div className="hero__image flex-1 mt-16">
             <ImageSlider />
           </div>
         </div>

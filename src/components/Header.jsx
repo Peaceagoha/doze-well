@@ -221,7 +221,6 @@ import { NavLink, useNavigate, Link } from "react-router-dom";
 import MenuIcon from "../assets/menu_icon.png";
 import CloseIcon from "../assets/cross_icon.png";
 import { useState } from "react";
-import './header.css'
 const Header = () => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
