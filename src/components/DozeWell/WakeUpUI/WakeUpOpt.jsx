@@ -4,11 +4,11 @@ import bg from "../../../assets/100vh-Bg.png";
 import Card from "../Card";
 
 const WakeUpOptimization = ({ className = "" }) => (
-  <Card className={`p-6 mb-6 ${className}`}>
+  <Card className={`md:p-6 md:mb-6 p-3 mb-3 ${className}`}>
     <main className="w-full flex flex-col items-center justify-between md:flex md:flex-row">
       <aside className="md:w-3/5 w-full flex flex-col items-center justify-center">
         <div className="flex w-full md:gap-3 items-center justify-between md:p-[10px] h-55px">
-          <h1 className="text-white font-bold text-[12px] md:text-xl capitalize">
+          <h1 className="text-white font-bold text-[15px] md:text-xl capitalize">
             Set Wake up Alarm
           </h1>
           <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] px-2 md:px-[15px] text-white capitalize text-sm font-bold rounded-lg">
@@ -23,7 +23,7 @@ const WakeUpOptimization = ({ className = "" }) => (
         </div>
 
         <div className="flex w-full gap-3 items-center justify-between p-[10px] h-55px">
-          <h1 className="text-white font-bold text-[12px] md:text-xl capitalize">
+          <h1 className="text-white font-bold text-[15px] md:text-xl capitalize">
             Sleeping Environment
           </h1>
           <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] px-6 md:px-[15px] text-white capitalize text-sm font-bold rounded-lg">
@@ -41,7 +41,7 @@ const WakeUpOptimization = ({ className = "" }) => (
           <h1 className="text-white font-bold text-xl capitalize">
             Sleep Time
           </h1>
-          <span className="flex items-center justify-center gap-3 h-[55px] ml-14 md:ml-[343px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
+          <span className="flex items-center justify-center gap-3 h-[55px] ml-14 md:ml-[300px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
             23:10
           </span>
         </div>
@@ -50,7 +50,7 @@ const WakeUpOptimization = ({ className = "" }) => (
           <h1 className="text-white font-bold text-xl capitalize">
             Sleep Time
           </h1>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center md:ml-[230px] gap-4">
             <span className="flex items-center justify-center gap-3 h-[55px] ml-md:[250px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
               Monday
             </span>

@@ -12,6 +12,9 @@ yarn-error.log*
 # Environment variables
 .env
 
+#package managers
+pnpm*
+
 # Editor directories and files
 .vscode/
 .idea/

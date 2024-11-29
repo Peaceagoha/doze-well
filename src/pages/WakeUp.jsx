@@ -94,7 +94,7 @@ import WakeUpUI from "../components/DozeWell/WakeUpUI";
 
 const WakeUp = () => {
   return (
-    <section className="sound-player-bg w-full max-w-full h-screen">
+    <section className="sound-player-bg relative w-full max-w-full h-[140vh] md:h-[106vh]">
       <Nav />
       <WakeUpUI />
     </section>

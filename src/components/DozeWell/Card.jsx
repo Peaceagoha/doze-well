@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 // Custom Card Component
 const Card = ({ children, className = "" }) => (
   <div
-    className={`bg-blue-card-bg rounded-lg shadow-lg ${className}`}
+    className={`bg-blue-card-bg md:rounded-lg md:shadow-lg ${className}`}
     style={{ height: "100%" }}
   >
     {children}

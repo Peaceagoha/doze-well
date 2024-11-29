@@ -3,8 +3,8 @@ import WakeUpOptimization from "./WakeUpOpt";
 
 const WakeUpUI = () => {
   return (
-    <div className="px-10 container w-full max-w-full">
-      <div className="max-w-7xl mx-auto h-full">
+    <div className="md:px-10 lg:container mx-auto w-full max-w-full">
+      <div className="max-w-7xl mx-auto ">
         <WakeUpHeader />
         <WakeUpOptimization />
 
