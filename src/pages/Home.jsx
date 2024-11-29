@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+// import Header from "../components/Header";
 
 import Hero from "../components/Hero";
 import DisocverySection from "../components/DisocverySection";
@@ -13,17 +13,17 @@ const Home = () => {
   return (
     <div className="font-primary">
       <div className=" bg-bg-primary bg-opacity-80">
-        <Header />
+        {/* <Header /> */}
         <Hero />
         <div className="bg-[#0A1334]">
-        <DisocverySection />
+          <DisocverySection />
           <Comments />
           <Features />
           <Subscription />
           <FAQ />
           <Newsletter />
         </div>
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

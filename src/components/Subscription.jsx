@@ -6,9 +6,11 @@ import { pricePlan } from "../data/data";
 
 const Subscription = () => {
   return (
-    <section className="text-white  px-6 py-10 sm:px-20 sm:py-24">
-      <img src={desktopPlayer} className="md:block hidden" alt="" />
-      <img src={mobilePlayer} className="md:hidden" alt="" />
+    <section className="text-white flex-row items-center justify-center px-6 py-10 sm:px-20 sm:py-24">
+      <div className="m-auto">
+        <img src={desktopPlayer} className="md:block hidden" alt="" />
+        <img src={mobilePlayer} className="md:hidden" alt="" />
+      </div>
 
       <main className="py-10  sm:py-24">
         <div className="space-y-4">

@@ -1,8 +1,6 @@
-import React from "react";
-
 const SoundFilter = () => {
   return (
-    <section className="py-5 container mx-auto px-3 sm:px-10 text-white">
+    <section className="px-10 py-5 container mx-auto px-3 sm:px-10 text-white">
       <div className="container mx-auto flex gap-3 md:justify-between items-center w-full overflow-x-auto">
         <button className="bg-purple-dozewell-accent text-white py-4 px-6 rounded-xl w-full ">
           All

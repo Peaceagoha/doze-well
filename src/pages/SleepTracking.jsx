@@ -1,13 +1,13 @@
 import Nav from "../components/DozeWell/Nav";
-import SoundPlayerUI from "../components/DozeWell/SoundPlayerUI";
+import SleepTrackingUI from "../components/DozeWell/SleepTrackingUI";
 
-const SoundPlayer = () => {
+const SleepTracking = () => {
   return (
     <section className="sound-player-bg w-full max-w-full h-screen">
       <Nav />
-      <SoundPlayerUI />
+      <SleepTrackingUI />
     </section>
   );
 };
 
-export default SoundPlayer;
+export default SleepTracking;
