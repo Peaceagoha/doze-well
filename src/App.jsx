@@ -25,7 +25,6 @@ const App = () => {
           <Route path="/userAuth" element={<Auth />} />
           <Route path="/soundplayer" element={<SoundPlayer />} />
           <Route path="/sleep-tracking" element={<SleepTracking />} />
-
           <Route path="/wake-up" element={<WakeUp />} />
         </Routes>
       )}

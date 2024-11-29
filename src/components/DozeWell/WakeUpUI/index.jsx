@@ -7,10 +7,6 @@ const WakeUpUI = () => {
       <div className="max-w-7xl mx-auto ">
         <WakeUpHeader />
         <WakeUpOptimization />
-
-        {/* <div className="container space-y-6">
-          <SleepQualityScore className="mx-auto" />
-        </div> */}
       </div>
     </div>
   );

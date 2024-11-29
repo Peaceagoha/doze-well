@@ -1,13 +1,12 @@
 import SoundFilter from "./SoundFilter";
 import SoundList from "./SoundList";
-import PlayerTimer from "./PlayerTimer";
+// import PlayerController from "./PlayerController";
 
 const SoundPlayerUI = () => {
   return (
-    <section className="w-full max-w-full">
+    <section className="w-full max-w-full h-full">
       <SoundFilter />
       <SoundList />
-      <PlayerTimer />
     </section>
   );
 };

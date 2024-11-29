@@ -5,9 +5,13 @@ export default {
     colors: {
       "bg-primary": "#0D0D0D",
       "purple-dozewell-accent": "#391E8A",
+      "purple-dozewell-light": "#7774A7",
       "purple-dozewell": "#7774A7",
       "purple-dark-dozewell": "#302D40",
       "blue-card-bg": "#6B8DB1",
+      "light-blue-bg": "#628FC7",
+      "dark-blue": "#1E4979",
+      "dark-blue-deep": "#07305F",
       "gray-light-dozewell": "#D9D9D9",
       "gray-dark-dozewell": "#424242",
       "dozwell-green": "rgba(43, 217, 168, 1)",

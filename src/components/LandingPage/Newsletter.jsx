@@ -8,9 +8,9 @@ const Newsletter = () => {
         <p className="text-base sm:text-lg text-gray-200 text-center md:text-left">
           Get the latest updates, insights, and tips straight to your inbox.
         </p>
-        <div className="flex lg:flex-row items-center">
+        <div className="flex md:flex-row items-center">
           <input
-            className="flex-grow px-6 py-4 text-black text-base sm:text-lg border-0 border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="flex-grow pl-2 py-4 text-black text-base sm:text-lg border-0 border-gray-300 focus:outline-none"
             type="email"
             placeholder="Enter your email"
             style={{ borderRadius: "10px 0 0 10px" }}

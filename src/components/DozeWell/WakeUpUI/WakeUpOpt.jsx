@@ -4,16 +4,15 @@ import bg from "../../../assets/100vh-Bg.png";
 import Card from "../Card";
 
 const WakeUpOptimization = ({ className = "" }) => (
-  <Card className={`md:p-6 md:mb-6 p-3 mb-3 ${className}`}>
+  <Card className={`md:p-6 p-3 ${className}`}>
     <main className="w-full flex flex-col items-center justify-between md:flex md:flex-row">
-      <aside className="md:w-3/5 w-full flex flex-col items-center justify-center">
-        <div className="flex w-full md:gap-3 items-center justify-between md:p-[10px] h-55px">
+      <aside className="md:w-3/5 w-full flex flex-col items-center justify-center space-y-4">
+        <div className="flex w-full md:gap-3 items-center justify-between h-55px">
           <h1 className="text-white font-bold text-[15px] md:text-xl capitalize">
             Set Wake up Alarm
           </h1>
           <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] px-2 md:px-[15px] text-white capitalize text-sm font-bold rounded-lg">
             dance my tune
-            
             <ChevronDown />
           </span>
           <label className="inline-flex items-center cursor-pointer">
@@ -22,13 +21,12 @@ const WakeUpOptimization = ({ className = "" }) => (
           </label>
         </div>
 
-        <div className="flex w-full gap-3 items-center justify-between p-[10px] h-55px">
+        <div className="flex w-full gap-3 items-center justify-between h-55px">
           <h1 className="text-white font-bold text-[15px] md:text-xl capitalize">
             Sleeping Environment
           </h1>
           <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] px-6 md:px-[15px] text-white capitalize text-sm font-bold rounded-lg">
             Comfortable
-            
             <ChevronDown />
           </span>
           <label className="inline-flex items-center cursor-pointer">
@@ -37,7 +35,7 @@ const WakeUpOptimization = ({ className = "" }) => (
           </label>
         </div>
 
-        <div className="flex w-full gap-3 items-center justify-start p-[10px] h-55px">
+        <div className="flex w-full gap-3 items-center justify-start h-55px">
           <h1 className="text-white font-bold text-xl capitalize">
             Sleep Time
           </h1>
@@ -46,7 +44,7 @@ const WakeUpOptimization = ({ className = "" }) => (
           </span>
         </div>
 
-        <div className="flex w-full gap-3 items-center justify-start p-[10px] h-55px">
+        <div className="flex w-full gap-3 items-center justify-start h-55px">
           <h1 className="text-white font-bold text-xl capitalize">
             Sleep Time
           </h1>
@@ -60,14 +58,15 @@ const WakeUpOptimization = ({ className = "" }) => (
           </div>
         </div>
       </aside>
-      <div className="md:w-2/5 py-5 flex items-center justify-center flex-col gap-3">
-        <p className="capitalize text-2xl">Change Background Color</p>
-        <img src={bg} alt="img" className="h-[200px] w-[300px]" />
-        <span className="flex items-center w-3/5 justify-between gap-3 h-[55px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
-          Comfortable
-          
-          <ChevronDown />
-        </span>
+      <div className="md:w-2/5 py-5 flex items-center md:flex-col justify-center gap-3">
+        <p className="capitalize text-xl">Change Background Color</p>
+        <div>
+          <img src={bg} alt="img" className="h-[200px] w-[300px]" />
+          <span className="flex items-center w-full mt-2 justify-between gap-3 h-[55px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
+            Comfortable
+            <ChevronDown />
+          </span>
+        </div>
       </div>
     </main>
   </Card>

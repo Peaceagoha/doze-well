@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Arrow from "../assets/arrow.png";
+import PropTypes from "prop-types";
+import Arrow from "../../assets/arrow.png";
 
 const Accordion = ({ text }) => {
   const [visible, setVisible] = useState(false);
@@ -10,14 +11,15 @@ const Accordion = ({ text }) => {
         <p>{text}</p>
         <img
           onClick={() => setVisible(!visible)}
-          className={`w-3 cursor-pointer ${visible ? "rotate-180": ""} transition-transform duration-300 ease-in`}
+          className={`w-3 cursor-pointer ${
+            visible ? "rotate-180" : ""
+          } transition-transform duration-300 ease-in`}
           src={Arrow}
           alt=""
         />
       </div>
       {visible && (
         <p>
-         
           A sleep management app tracks your sleep patterns using sensors or
           wearable devices, analyzes the data to provide personalized insights
           and reports, offers tips and relaxation aids like white noise or
@@ -27,6 +29,15 @@ const Accordion = ({ text }) => {
       )}
     </div>
   );
+};
+
+Accordion.propTypes = {
+  text: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Accordion;

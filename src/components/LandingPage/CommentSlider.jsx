@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { commentsData, responsive } from "../data/data";
+import { commentsData, responsive } from "../../data/data";
 
 const CommentSlider = () => {
   return (
@@ -13,7 +13,7 @@ const CommentSlider = () => {
           >
             <h1 className="font-bold">{slide.title}</h1>
             <p className="font-light">{slide.body}</p>
-            <div children className="flex gap-4 items-center">
+            <div className="flex gap-4 items-center">
               <img src={slide.image} alt="" />
               <p className="text-base font-bold">{slide.name}</p>
             </div>

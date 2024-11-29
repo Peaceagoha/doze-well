@@ -4,7 +4,7 @@ const WakeUpHeader = () => {
       <h1 className="text-white font-bold capitalize text-2xl">Hello</h1>
       <h1 className="text-white font-bold capitalize text-2xl">Techthoth!</h1>
       <p className="font-bold text-white capitalize">welcome back!</p>
-      {/* */}
+     
     </div>
   );
 };

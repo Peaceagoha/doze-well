@@ -1,16 +1,15 @@
 import SleepTab from "./SleepTab";
 import SleepQualityScore from "./SleepQuaScore";
+import SleepSummaryPage from "./SleepSummary";
 
 const SleepTrackingUI = () => {
   return (
-    <div className="px-10 container w-full max-w-full">
+    <div className="w-full max-w-full h-full">
       <div className="max-w-7xl mx-auto h-full">
-        <SleepTab />
-        <div className="container space-y-6">
+        <SleepTab className="lg:hidden" />
+        <div className="space-y-6">
           <SleepQualityScore className="mx-auto" />
-          {/* <SleepSummary />
-          <SleepActivities />
-          <SleepAnalysis /> */}
+          <SleepSummaryPage />
         </div>
       </div>
     </div>

@@ -1,7 +1,5 @@
 import CommentSlider from "./CommentSlider";
 
-
-
 const Comments = () => {
   return (
     <section className="bg-[#0A1334] md:py-20">
@@ -15,10 +13,10 @@ const Comments = () => {
           for yourself.
         </p>
       </div>
-      
-    <CommentSlider />
+
+      <CommentSlider />
     </section>
   );
-}
+};
 
-export default Comments
+export default Comments;

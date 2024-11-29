@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-import { FAQs } from "../data/data";
+import { FAQs } from "../../data/data";
 import Accordion from "./Accordion";
 
 const FAQ = () => {

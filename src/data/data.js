@@ -190,6 +190,7 @@ export const soundList = [
     name: "Birds",
     image: Birds,
     category: "birds",
+    soundFile: "/sounds/birds.mp3",
   },
   {
     id: 2,

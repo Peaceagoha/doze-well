@@ -1,5 +1,5 @@
-import Slide1 from "../assets/Slide1.png";
-import Slide2 from "../assets/Slide2.png";
+import Slide1 from "../../assets/Slide1.png";
+import Slide2 from "../../assets/Slide2.png";
 import { useState } from "react";
 
 const ImageSlider = () => {
@@ -18,7 +18,7 @@ const ImageSlider = () => {
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{
-            transform: `translateX(-${currentIndex * 85}%)`, // Slightly reduce the translation to show part of the next image
+            transform: `translateX(-${currentIndex * 85}%)`,
           }}
         >
           {images.map((img, index) => (
@@ -28,7 +28,7 @@ const ImageSlider = () => {
                 index === currentIndex ? "scale-100 z-10" : "scale-75"
               }`}
               style={{
-                transform: `scale(${index === currentIndex ? 1 : 0.85})`, // Inline scaling for fine control
+                transform: `scale(${index === currentIndex ? 1 : 0.85})`,
               }}
             >
               <img

@@ -1,8 +1,8 @@
-import desktopPlayer from "../assets/desktop-player.png";
-import mobilePlayer from "../assets/mobile-player.png";
-import Box from "../assets/box.png";
-import Check from "../assets/check.png";
-import { pricePlan } from "../data/data";
+import desktopPlayer from "../../assets/desktop-player.png";
+import mobilePlayer from "../../assets/mobile-player.png";
+import Box from "../../assets/box.png";
+import Check from "../../assets/check.png";
+import { pricePlan } from "../../data/data";
 
 const Subscription = () => {
   return (
