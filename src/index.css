@@ -74,7 +74,9 @@
   opacity: 75%;
   width: 80%;
 }
-
+.dot__three{
+  background-color: #7774A7;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
