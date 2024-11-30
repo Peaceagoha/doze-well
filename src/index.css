@@ -50,6 +50,30 @@
   display: flex;
   gap: 20px;
 }
+.arrow{
+  font-size: 27px;
+  margin-left: 9px;
+  font-weight: bold;
+  background-color: #7774A7;
+}
+.card__text{
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 30px;
+}
+.button__card{
+  font-weight: 500;
+}
+.second__slider{
+  font-family: "Lato", sans-serif;
+}
+.p__text{
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  opacity: 75%;
+  width: 80%;
+}
 
 @keyframes spin {
   0% {
