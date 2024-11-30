@@ -12,7 +12,7 @@ const DiscoverySection = () => {
             Discover the Secret to a Restful Night: Why DozeWell Is Your Best
             Choice
           </h1>
-          <p className="font-light text-sm sm:text-base">
+          <p className="font-light text-sm sm:text-base opacity-75">
             Our app uses cutting-edge technology to track and analyze your sleep
             patterns, offering insights and recommendations based on real data.
           </p>
@@ -25,7 +25,7 @@ const DiscoverySection = () => {
 
         {/* Video Section */}
         <section className="md:py-20 py-10">
-          <h1 className="text-base md:text-lg lg:text-xl text-center md:text-left md:w-4/5 mx-auto">
+          <h1 className="text-base md:text-lg lg:text-xl text-center md:text-left md:w-4/5 mx-auto ">
             Achieve better sleep and a healthier lifestyle with our app. Start
             your journey to restful nights and vibrant days today.
           </h1>
@@ -40,17 +40,17 @@ const DiscoverySection = () => {
 
             {/* Text Content */}
             <div className="flex-1 space-y-6">
-              <h1 className="font-bold text-lg sm:text-xl">
+              <h1 className="discover__header font-bold text-lg sm:text-xl">
                 Optimize Your Sleep with Smart Tracking
               </h1>
-              <p className="text-sm sm:text-base leading-loose">
+              <p className="p__text text-sm leading-8">
                 A sleep management app tracks your sleep patterns using sensors
                 or wearable devices, analyzes the data to provide personalized
                 insights and reports, offers tips and relaxation aids like white
                 noise or meditations, and integrates with other devices to help
                 you improve your sleep quality and achieve your sleep goals.
               </p>
-              <button className="bg-purple-dozewell text-white px-6 py-2 rounded-md">
+              <button className="bg-purple-dozewell text-white px-8 py-4 rounded-md">
                 How it works
               </button>
             </div>
