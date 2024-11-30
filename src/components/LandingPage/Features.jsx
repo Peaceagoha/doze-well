@@ -12,10 +12,10 @@ const Features = () => {
         {featuresData.map((feature, i) => (
           <div key={i} className="flex-1 pag-4 md:gap-10 flex flex-col h-full">
             <img className="w-48 self-center" src={feature.image} alt="" />
-            <h1 className="text-lg font-bold text-purple-dozewell self-center">
+            <h1 className="text-lg opacity-80 font-bold text-purple-dozewell self-center">
               {feature.title}
             </h1>
-            <p className="text-sm font-light sm:self-start self-center text-center sm:text-left">
+            <p className="text-sm font-light sm:self-start leading-6 self-center text-center sm:text-left">
               {feature.body}
             </p>
           </div>
