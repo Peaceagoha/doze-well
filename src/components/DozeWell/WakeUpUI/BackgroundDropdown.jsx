@@ -1,14 +1,45 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import { useBackground } from "./BGFunction/useBackground";
+import { useStore } from "@nanostores/react";
+import { $bg } from "../../../store";
 import { BACKGROUNDS } from "../../../data/data";
 
 const BackgroundDropdown = () => {
-  const { currentBackground, setBackground } = useBackground();
+  const bg = useStore($bg);
+  const [imgSrc, setImgSrc] = useState("");
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    switch (bg) {
+      case "sound-player-bg":
+        setImgSrc("/src/assets/bg-dashboard.png");
+        setName("Default");
+        break;
+      case "bg-comfortable":
+        setImgSrc("/src/assets/bg-dashboard_2.png");
+        setName("Comfortable");
+
+        break;
+      case "bg-serene":
+        setImgSrc("/src/assets/bg-dashboard_3.png");
+        setName("Serene");
+
+        break;
+      case "bg-calm":
+        setImgSrc("/src/assets/bg-dashboard_4.png");
+        setName("Calm");
+
+        break;
+    }
+  }, [bg]);
+
+  const currentBackground = $bg.get();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  console.log(imgSrc);
+
   const backgroundOptions = BACKGROUNDS.filter(
-    (bg) => bg.name !== currentBackground.name
+    (bg) => bg.name !== currentBackground
   );
 
   return (
@@ -16,7 +47,7 @@ const BackgroundDropdown = () => {
       <p className="capitalize text-xl">Change Background</p>
       <div>
         <img
-          src={currentBackground.image}
+          src={imgSrc}
           alt="Background Preview"
           className="h-[200px] w-[300px] object-cover"
         />
@@ -24,7 +55,7 @@ const BackgroundDropdown = () => {
           className="flex items-center w-full mt-2 justify-between gap-3 h-[55px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg cursor-pointer"
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
-          {currentBackground.name}
+          {name}
           <ChevronDown />
         </div>
 
@@ -36,7 +67,8 @@ const BackgroundDropdown = () => {
                 key={background.name}
                 className="bg-[#4B0082] text-white px-[15px] py-2 capitalize cursor-pointer hover:bg-purple-700"
                 onClick={() => {
-                  setBackground(background);
+                  $bg.set(background.bgClass);
+
                   setIsDropdownOpen(false);
                 }}
               >
