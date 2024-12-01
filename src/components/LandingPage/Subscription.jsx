@@ -20,7 +20,7 @@ const Subscription = () => {
         {/* Price Plan Wrapper */}
         <div className="py-8 flex md:flex-row flex-col justify-center gap-8 items-center">
           {/* Price Plan Card 1 */}
-          <div className="px-4 py-6 bg-dozewell-gradient rounded-3xl flex flex-col gap-6 flex-1">
+          <div className="sub__card sub__bg leading-7 rounded-3xl flex flex-col gap-6 flex-1 mx-3">
             <div className="flex items-center gap-4">
               <img src={Box} alt="" />
               <div>
@@ -30,58 +30,58 @@ const Subscription = () => {
             </div>
             <div className="space-y-4">
               {pricePlan.slice(0, 5).map((plan, i) => (
-                <div key={i} className="flex gap-4 items-center text-white">
+                <div key={i} className="flex gap-4 items-center text-white mx-3">
                   <img src={Check} alt="" />
                   <p className="font-medium text-base">{plan.text}</p>
                 </div>
               ))}
             </div>
 
-            <button className="bg-purple-dark-dozewell py-4 rounded-lg">
+            <button className="sub__button bg-purple-dark-dozewell py-4 rounded-lg my-7">
               Sign Up for free
             </button>
           </div>
           {/* Price Plan Card 2 */}
-          <div className="px-4 py-6 bg-dozewell-gradient rounded-3xl flex flex-col gap-10 flex-1">
+          <div className="sub__card__middle sub__bg rounded-3xl flex flex-col gap-10 flex-1">
             <div className="flex items-center gap-4">
               <img src={Box} alt="" />
               <div>
-                <h2>Free Plan (Basic)</h2>
-                <p>Price: $0/month</p>
+                <h2>Plus plan (intermediate)</h2>
+                <p>Price: $9.99/month</p>
               </div>
             </div>
             <div className="space-y-4">
               {pricePlan.slice(5, 11).map((plan, i) => (
-                <div key={i} className="flex gap-4 items-center text-white">
+                <div key={i} className="flex gap-4 items-center text-white mx-3">
                   <img src={Check} alt="" />
-                  <p className="font-medium text-base">{plan.text}</p>
+                  <p className="font-small text-l leading-7">{plan.text}</p>
                 </div>
               ))}
             </div>
 
-            <button className="bg-purple-dark-dozewell py-4 rounded-lg">
-              Sign Up for free
+            <button className=" sub__button bg-purple-dark-dozewell py-4 ">
+              Start free trial
             </button>
           </div>
-          <div className="px-4 py-6 bg-dozewell-gradient rounded-3xl flex flex-col gap-6 flex-1">
+          <div className="sub__card sub__bg rounded-3xl flex flex-col gap-6 flex-1">
             <div className="flex items-center gap-4">
               <img src={Box} alt="" />
               <div>
-                <h2>Free Plan (Basic)</h2>
-                <p>Price: $0/month</p>
+                <h2>Premium plan</h2>
+                <p>Price: $19.99/month</p>
               </div>
             </div>
             <div className="space-y-4">
               {pricePlan.slice(11, 18).map((plan, i) => (
-                <div key={i} className="flex gap-4 items-center text-white">
+                <div key={i} className="flex gap-4 items-center text-white ">
                   <img src={Check} alt="" />
-                  <p className="font-medium text-base">{plan.text}</p>
+                  <p className="font-small text-base mx-3">{plan.text}</p>
                 </div>
               ))}
             </div>
 
-            <button className="bg-purple-dark-dozewell py-4 rounded-lg">
-              Sign Up for free
+            <button className="sub__button bg-purple-dark-dozewell py-4 rounded-lg">
+              Start free trial
             </button>
           </div>
         </div>
