@@ -214,7 +214,7 @@ export const soundList = [
     name: "Wind",
     image: Wind,
     category: "wain",
-    soundFile: "https://drive.google.com/file/d/1GQaP5PxRKI4VRMbTCkbh_8Ske9q0l-pa/view?usp=drive_link",
+    soundFile: "/Wind.mp3",
   },
 
   {
