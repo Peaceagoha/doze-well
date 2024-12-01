@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Settings, Calendar, Bell, Clock, Moon } from "lucide-react";
+import CircularProgressBar from "./ScoreBar";
 import Card from "../Card";
 
 const SleepQualityScore = ({ className = "" }) => {
@@ -22,7 +23,7 @@ const SleepQualityScore = ({ className = "" }) => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center mb-6">
+      {/* <div className="flex flex-col items-center mb-6">
         <div className="relative w-60 h-60">
           <div className="flex-col absolute inset-0 flex text-center items-center justify-center">
             <div className="text-5xl text-white font-bold">75°</div>
@@ -52,7 +53,9 @@ const SleepQualityScore = ({ className = "" }) => {
           </svg>
         </div>
         <div className="text-white text-xl mt-4">Great job you did well</div>
-      </div>
+      </div> */}
+
+      <CircularProgressBar targetProgress={75} size={250} strokeWidth={20} />
 
       <div
         className="flex items-center justify-between mx-auto"
