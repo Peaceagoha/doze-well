@@ -24,6 +24,17 @@ import Control from "../assets/Control.svg";
 import Download from "../assets/Download.svg";
 import Play from "../assets/Play.svg";
 import Timer from "../assets/Timer.svg";
+import bg1 from "../assets/100vh-Bg.png";
+import bg2 from "../assets/bg-dashboard_2.png";
+import bg3 from "../assets/bg-dashboard_3.png";
+import bg4 from "../assets/bg-dashboard_4.png";
+
+export const BACKGROUNDS = [
+  { name: "Default", image: bg1, bgClass: "sound-player-bg" },
+  { name: "Comfortable", image: bg2, bgClass: "bg-comfortable" },
+  { name: "Serene", image: bg3, bgClass: "bg-serene" },
+  { name: "Calm", image: bg4, bgClass: "bg-calm" },
+];
 
 export const responsive = {
   superLargeDesktop: {
@@ -108,7 +119,7 @@ export const commentsData = [
     title: "Perfect for My Kids",
     body: "My kids used to resist bedtime, but with the soothing lullabies and gentle sleep stories in this app, they now look forward to it! We've noticed a big difference in their sleep quality, and they wake up happier. It's become an essential part of our nightly routine.",
     image: Avatar3,
-    name: "Shola R.",
+    name: "Pascal A.",
   },
   {
     title: "A Game Changer for My Sleep Routine!",
@@ -117,10 +128,10 @@ export const commentsData = [
     name: "Sarah M.",
   },
   {
-    title: "Finally, Peaceful Nights!",
+    title: "As a busy professional!",
     body: "As a busy professional, stress often keeps me up at night. This app has been a lifesaver! The calming sounds and bedtime stories help me unwind and relax after a hectic day. I can't imagine going to bed without it now. Highly recommend it to anyone looking to improve their sleep.",
     image: Avatar2,
-    name: "David L.",
+    name: "Juwera J.",
   },
   {
     title: "Perfect for My Kids",

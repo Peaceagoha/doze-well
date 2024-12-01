@@ -1,6 +1,5 @@
 import SoundFilter from "./SoundFilter";
 import SoundList from "./SoundList";
-// import PlayerController from "./PlayerController";
 
 const SoundPlayerUI = () => {
   return (

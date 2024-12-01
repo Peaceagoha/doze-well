@@ -122,12 +122,12 @@ const Nav = () => {
               <NavLink to="/wake-up" className={getNavLinkClass("/wake-up")}>
                 Wake-Up Optimization
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/communities"
                 className={getNavLinkClass("/communities")}
               >
                 Communities
-              </NavLink>
+              </NavLink> */}
               <NavLink
                 to="/userAuth"
                 className="bg-blue-800 px-7 py-2 rounded-full border border-1 text-white hover:bg-blue-700 transition-colors duration-200"

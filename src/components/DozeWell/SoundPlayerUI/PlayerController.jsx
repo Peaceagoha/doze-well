@@ -16,7 +16,7 @@ const PlayerController = ({
   if (!currentSound) return null;
 
   return (
-    <div className="bg-black text-white px-6 py-4 rounded-lg flex items-center justify-between space-x-4">
+    <div className="sticky bottom-0 right-0 left-0 bg-black text-white px-6 py-4 rounded-lg flex items-center justify-between space-x-4">
       {/* Play Button */}
       <div className="flex flex-col items-center">
         <button

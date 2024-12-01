@@ -10,11 +10,37 @@
   background-repeat: no-repeat;
 }
 
+/* Backgrounds */
 .sound-player-bg {
   background-image: url("assets/bg-dashboard.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.bg-comfortable {
+  background-image: url("assets/bg-dashboard_2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.bg-serene {
+  background-image: url("assets/bg-dashboard_3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.bg-calm {
+  background-image: url("assets/bg-dashboard_4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
 }
 
 .video-container {
@@ -26,7 +52,7 @@
 }
 
 .nav-dot.active {
-  background-color: rgb(139, 103, 139)
+  background-color: rgb(139, 103, 139);
 }
 
 /* Preloader */
@@ -34,48 +60,48 @@
   animation: spin 1s linear infinite;
 }
 /* nav bar */
-.container{
+.container {
   padding-left: 30px;
   padding-right: 30px;
 }
-.nav__bar{
+.nav__bar {
   padding: 20px;
 }
-.doze__well{
+.doze__well {
   font-size: 23px;
 }
-.nav__link{
+.nav__link {
   color: hwb(0 87% 13%);
   font-weight: 200;
   display: flex;
   gap: 20px;
 }
-.arrow{
+.arrow {
   font-size: 27px;
   margin-left: 9px;
   font-weight: bold;
-  background-color: #7774A7;
+  background-color: #7774a7;
 }
-.card__text{
+.card__text {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   line-height: 30px;
 }
-.button__card{
+.button__card {
   font-weight: 500;
 }
-.second__slider{
+.second__slider {
   font-family: "Lato", sans-serif;
 }
-.p__text{
+.p__text {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 16px;
   opacity: 75%;
   width: 80%;
 }
-.dot__three{
-  background-color: #7774A7;
+.dot__three {
+  background-color: #7774a7;
 }
 /*Subscription*/
 .sub__card__middle{

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { ChevronDown } from "lucide-react";
-import bg from "../../../assets/100vh-Bg.png";
+import BackgroundDropdown from "./BackgroundDropdown";
 import Card from "../Card";
 
 const WakeUpOptimization = ({ className = "" }) => (
@@ -58,16 +58,8 @@ const WakeUpOptimization = ({ className = "" }) => (
           </div>
         </div>
       </aside>
-      <div className="md:w-2/5 py-5 flex items-center md:flex-col justify-center gap-3">
-        <p className="capitalize text-xl">Change Background Color</p>
-        <div>
-          <img src={bg} alt="img" className="h-[200px] w-[300px]" />
-          <span className="flex items-center w-full mt-2 justify-between gap-3 h-[55px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
-            Comfortable
-            <ChevronDown />
-          </span>
-        </div>
-      </div>
+
+      <BackgroundDropdown />
     </main>
   </Card>
 );
