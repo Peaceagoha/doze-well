@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { commentsData, responsive } from "../../data/data";
 
 const CommentSlider = () => {
@@ -8,9 +8,13 @@ const CommentSlider = () => {
   const totalCards = commentsData.length;
   const visibleCards = 3; // Number of cards visible at a time
   const totalDots = totalCards - visibleCards + 1; // Number of scroll groups
+  const carouselRef = useRef(null);
 
   const handleDotClick = (dotIndex) => {
     setCurrentIndex(dotIndex); // Navigate to the specific dot group
+    if (carouselRef.current) {
+      carouselRef.current.goToSlide(dotIndex);
+    }
   };
 
   const calculateActiveDot = (currentSlide) => {
@@ -22,14 +26,17 @@ const CommentSlider = () => {
     <section className="py-10 px-8 relative">
       {/* Carousel Section */}
       <Carousel
+        ref={carouselRef}
         responsive={responsive}
         arrows={false}
-        showDots={false} // Disable default dots
-        beforeChange={(nextSlide) => setCurrentIndex(calculateActiveDot(nextSlide))}
+        showDots={false}
+        beforeChange={(nextSlide) =>
+          setCurrentIndex(calculateActiveDot(nextSlide))
+        }
         customTransition="all 0.5s ease"
         autoPlay={false}
         infinite={false}
-        slidesToSlide={1} // Scroll one card at a time
+        slidesToSlide={1}
         containerClass="carousel-container"
       >
         {commentsData.map((slide, index) => (
@@ -40,7 +47,11 @@ const CommentSlider = () => {
             <h1 className="font-bold">{slide.title}</h1>
             <p className="font-light leading-8 opacity-75">{slide.body}</p>
             <div className="flex gap-4 items-center">
-              <img src={slide.image} alt="" className="w-10 h-10 rounded-full" />
+              <img
+                src={slide.image}
+                alt=""
+                className="w-10 h-10 rounded-full"
+              />
               <p className="text-base font-bold">{slide.name}</p>
             </div>
           </div>

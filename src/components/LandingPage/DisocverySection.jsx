@@ -19,7 +19,7 @@ const DiscoverySection = () => {
         </div>
 
         {/* Slider Section */}
-        <div>
+        <div className="z-10">
           <Slider slides={sliderData} />
         </div>
 

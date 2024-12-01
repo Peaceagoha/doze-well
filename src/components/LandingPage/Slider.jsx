@@ -9,7 +9,7 @@ const Slider = ({ slides }) => {
   const CustomLeftArrow = ({ onClick }) => (
     <button
       onClick={onClick}
-      className="arrow absolute -left-0 top-1/2 transform -translate-y-1/2 bg-purple-600 text-white p-2 rounded-full shadow-md  z-10"
+      className="arrow absolute -left-2 top-1/2 transform -translate-y-1/2 bg-purple-600 text-white p-2 rounded-full shadow-md  z-10"
     >
       <FaChevronLeft />
     </button>
@@ -24,6 +24,14 @@ const Slider = ({ slides }) => {
       <FaChevronRight />
     </button>
   );
+
+  CustomLeftArrow.propTypes = {
+    onClick: PropTypes.func.isRequired,
+  };
+
+  CustomRightArrow.propTypes = {
+    onClick: PropTypes.func.isRequired,
+  };
 
   return (
     <section className="second__slider py-10 relative">
