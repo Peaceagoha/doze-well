@@ -36,7 +36,6 @@ const BackgroundDropdown = () => {
   const currentBackground = $bg.get();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  console.log(imgSrc);
 
   const backgroundOptions = BACKGROUNDS.filter(
     (bg) => bg.name !== currentBackground

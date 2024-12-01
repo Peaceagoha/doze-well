@@ -6,7 +6,6 @@ import WakeUpUI from "../components/DozeWell/WakeUpUI";
 
 const WakeUp = () => {
   const bg = useStore($bg);
-  console.log(bg);
 
   return (
     //
