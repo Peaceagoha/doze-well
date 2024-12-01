@@ -201,7 +201,7 @@ export const soundList = [
     name: "Birds",
     image: Birds,
     category: "birds",
-    soundFile: "/sounds/birds.mp3",
+    soundFile: "/assets/birds.mp3",
   },
   {
     id: 2,
@@ -214,6 +214,7 @@ export const soundList = [
     name: "Wind",
     image: Wind,
     category: "wain",
+    soundFile: "https://drive.google.com/file/d/1GQaP5PxRKI4VRMbTCkbh_8Ske9q0l-pa/view?usp=drive_link",
   },
 
   {
