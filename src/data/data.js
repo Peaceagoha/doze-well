@@ -201,20 +201,21 @@ export const soundList = [
     name: "Birds",
     image: Birds,
     category: "birds",
-    soundFile: "/assets/birds.mp3",
+    // soundFile: "https://peaceagoha.github.io/doze-well/assets/Ocean.mp3",
   },
   {
     id: 2,
     name: "Rain",
     image: Rain,
     category: "rain",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/Rain.mp3",
   },
   {
     id: 3,
     name: "Wind",
     image: Wind,
     category: "wain",
-    soundFile: "/Wind.mp3",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/wind.mp3",
   },
 
   {
@@ -222,12 +223,14 @@ export const soundList = [
     name: "Synthwave",
     image: Synthwave,
     category: "synthwave",
+    // soundFile: "https://peaceagoha.github.io/doze-well/assets/.mp3",
   },
   {
     id: 5,
     name: "Ocean",
     image: Ocean,
     category: "ocean",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/Ocean.mp3",
   },
 
   {
@@ -235,6 +238,7 @@ export const soundList = [
     name: "Autumn Forest",
     image: AutumnForest,
     category: "autumn forest",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/autumn forest.mp3",
   },
 
   {
@@ -242,18 +246,21 @@ export const soundList = [
     name: "Water Dripping",
     image: WaterDripping,
     category: "water dripping",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/Water Drop 01.mp3",
   },
   {
     id: 8,
     name: "Orchestral",
     image: Orchestral,
     category: "orchestral",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/Orchestral.mp3",
   },
   {
     id: 9,
     name: "Water Fall",
     image: WaterFall,
     category: "waterfall",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/waterfall.mp3",
   },
 
   {
@@ -261,12 +268,14 @@ export const soundList = [
     name: "Thunder",
     image: Thunder,
     category: "thunder",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/thunder.mp3",
   },
   {
     id: 11,
     name: "Camp Fire",
     image: Campfire,
     category: "camp fire",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/campfire.mp3",
   },
 
   {
@@ -274,24 +283,28 @@ export const soundList = [
     name: "Lake Shore",
     image: LakeShore,
     category: "lake shore",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/lake shore.mp3",
   },
   {
     id: 13,
     name: "Deep Bass",
     image: DeepBass,
     category: "deep bass",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/Deep Bass Wave.mp3",
   },
   {
     id: 14,
     name: "White Noise",
     image: WhiteNoise,
     category: "white noise",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/white noise.mp3",
   },
   {
     id: 15,
     name: "Brain Scanner",
     image: BrainScanner,
     category: "brain scanner",
+    // soundFile: "https://peaceagoha.github.io/doze-well/assets/fan electric.mp3",
   },
 ];
 
