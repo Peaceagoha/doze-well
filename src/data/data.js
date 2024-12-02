@@ -201,7 +201,7 @@ export const soundList = [
     name: "Birds",
     image: Birds,
     category: "birds",
-    // soundFile: "https://peaceagoha.github.io/doze-well/assets/Ocean.mp3",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/air conditioner.mp3",
   },
   {
     id: 2,
@@ -223,7 +223,7 @@ export const soundList = [
     name: "Synthwave",
     image: Synthwave,
     category: "synthwave",
-    // soundFile: "https://peaceagoha.github.io/doze-well/assets/.mp3",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/fan electric.mp3",
   },
   {
     id: 5,
@@ -304,7 +304,7 @@ export const soundList = [
     name: "Brain Scanner",
     image: BrainScanner,
     category: "brain scanner",
-    // soundFile: "https://peaceagoha.github.io/doze-well/assets/fan electric.mp3",
+    soundFile: "https://peaceagoha.github.io/doze-well/assets/Deep Bass Wave.mp3",
   },
 ];
 
