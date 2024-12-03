@@ -46,7 +46,7 @@ const SoundList = () => {
   };
 
   return (
-    <section className="container space-y-10 mx-auto px-10 sm:px-10 text-white">
+    <section className="container my-5 space-y-10 mx-auto px-10 sm:px-10 text-white">
       {/* Sound Buttons */}
       <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-5 gap-6 md:px-8">
         {soundList.map((sound, i) => (

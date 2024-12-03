@@ -34,7 +34,7 @@ const Header = () => {
           </Link>
           <button
             className="text-purple-dozewell border border-purple-dozewell px-8 rounded-3xl py-2"
-            onClick={() => navigate("/soundplayer")}
+            onClick={() => navigate("/dozewell/soundplayer")}
           >
             Try for free
           </button>
@@ -99,7 +99,7 @@ const Header = () => {
               Login
             </NavLink>
             <NavLink
-              to="/soundplayer"
+              to="/dozewell/soundplayer"
               onClick={handleToggleMenu}
               className="text-purple-dozewell border border-purple-dozewell text-center rounded-3xl py-2"
               style={{ width: "140px" }}

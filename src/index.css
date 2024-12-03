@@ -104,23 +104,23 @@
   background-color: #7774a7;
 }
 /*Subscription*/
-.sub__card__middle{
+.sub__card__middle {
   height: 600px;
   padding-top: 45px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
 }
-.sub__bg{
-  background-color: #706D9B;
+.sub__bg {
+  background-color: #706d9b;
 }
-.sub__button{
+.sub__button {
   margin-left: 23px;
   width: 300px;
   border-radius: 15px;
   font-size: 15px;
 }
-.sub__card{
+.sub__card {
   height: 530px;
   padding-top: 45px;
   padding-left: 15px;

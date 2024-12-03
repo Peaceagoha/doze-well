@@ -17,7 +17,7 @@ const CircularProgressBar = ({
   const arcLength = (3 / 4) * circumference;
 
   useEffect(() => {
-    const duration = 4000;
+    const duration = 2000;
     const startTime = performance.now();
 
     const animateProgress = (timestamp) => {
@@ -42,7 +42,7 @@ const CircularProgressBar = ({
     <svg
       width={size}
       height={size}
-      style={{ display: "block", margin: "auto" }}
+      style={{ display: "block", margin: "auto", marginTop: "20px" }}
     >
       {/* Background arc */}
       <circle

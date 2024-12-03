@@ -1,3 +1,3 @@
-import { atom } from 'nanostores'
+import { atom } from "nanostores";
 
-export const $bg = atom("bg-calm")
+export const $bg = atom("sound-player-bg");

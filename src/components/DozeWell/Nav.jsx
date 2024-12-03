@@ -33,47 +33,54 @@ const Nav = () => {
     };
   }, []);
 
+  const handleNavLinkClick = () => {
+    setIsNavOpen(false);
+  };
+
   return (
     <>
       {isLoading ? (
         <Preloader />
       ) : (
         <nav
-          className={`px-10 bg-blue-900/80 py-4 sticky top-0 z-50 
-            ${isScrolled ? "backdrop-blur-md" : ""}`}
+          className={`bg-blue-900/80 py-4 sticky top-0 z-50 ${
+            isScrolled ? "backdrop-blur-md" : ""
+          }`}
         >
-          <div className="flex justify-between items-center max-w-7xl mx-auto">
+          <div className="container flex justify-between items-center max-w-7xl mx-auto">
             <NavLink
               to="/"
               className="text-white text-xl font-bold hover:text-purple-200"
+              onClick={handleNavLinkClick}
             >
               DozeWell
             </NavLink>
             <div className="hidden md:flex space-x-6 items-center">
               <NavLink
-                to="/soundplayer"
-                className={getNavLinkClass("/soundplayer")}
+                to="/dozewell/soundplayer"
+                className={getNavLinkClass("/dozewell/soundplayer")}
+                onClick={handleNavLinkClick}
               >
                 Sound
               </NavLink>
               <NavLink
-                to="/sleep-tracking"
-                className={getNavLinkClass("/sleep-tracking")}
+                to="/dozewell/sleep-tracking"
+                className={getNavLinkClass("/dozewell/sleep-tracking")}
+                onClick={handleNavLinkClick}
               >
                 Sleep Tracking
               </NavLink>
-              <NavLink to="/wake-up" className={getNavLinkClass("/wake-up")}>
-                Wake-Up Optimization
-              </NavLink>
               <NavLink
-                to="/communities"
-                className={getNavLinkClass("/communities")}
+                to="/dozewell/wake-up"
+                className={getNavLinkClass("/dozewell/wake-up")}
+                onClick={handleNavLinkClick}
               >
-                Communities
+                Wake-Up Optimization
               </NavLink>
               <NavLink
                 to="/userAuth"
                 className="bg-blue-800 px-7 py-2 rounded-full border border-1 text-white hover:bg-blue-700 transition-colors duration-200"
+                onClick={handleNavLinkClick}
               >
                 Profile
               </NavLink>
@@ -97,6 +104,7 @@ const Nav = () => {
               <NavLink
                 to="/"
                 className="text-white text-xl font-bold hover:text-purple-200"
+                onClick={handleNavLinkClick}
               >
                 DozeWell
               </NavLink>
@@ -107,30 +115,30 @@ const Nav = () => {
 
             <div className="flex flex-col items-center justify-center h-full space-y-8">
               <NavLink
-                to="/soundplayer"
-                className={getNavLinkClass("/soundplayer")}
-                onClick={() => setIsNavOpen(false)}
+                to="/dozewell/soundplayer"
+                className={getNavLinkClass("/dozewell/soundplayer")}
+                onClick={handleNavLinkClick}
               >
                 Sound
               </NavLink>
               <NavLink
-                to="/sleep-tracking"
-                className={getNavLinkClass("/sleep-tracking")}
+                to="/dozewell/sleep-tracking"
+                className={getNavLinkClass("/dozewell/sleep-tracking")}
+                onClick={handleNavLinkClick}
               >
                 Sleep Tracking
               </NavLink>
-              <NavLink to="/wake-up" className={getNavLinkClass("/wake-up")}>
+              <NavLink
+                to="/dozewell/wake-up"
+                className={getNavLinkClass("/dozewell/wake-up")}
+                onClick={handleNavLinkClick}
+              >
                 Wake-Up Optimization
               </NavLink>
-              {/* <NavLink
-                to="/communities"
-                className={getNavLinkClass("/communities")}
-              >
-                Communities
-              </NavLink> */}
               <NavLink
                 to="/userAuth"
                 className="bg-blue-800 px-7 py-2 rounded-full border border-1 text-white hover:bg-blue-700 transition-colors duration-200"
+                onClick={handleNavLinkClick}
               >
                 Profile
               </NavLink>

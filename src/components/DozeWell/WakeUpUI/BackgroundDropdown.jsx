@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { useStore } from "@nanostores/react";
 import { $bg } from "../../../store";
@@ -35,7 +35,6 @@ const BackgroundDropdown = () => {
 
   const currentBackground = $bg.get();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
 
   const backgroundOptions = BACKGROUNDS.filter(
     (bg) => bg.name !== currentBackground

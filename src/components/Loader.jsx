@@ -1,7 +1,10 @@
 import { useEffect } from "react";
-// import { BackgroundProvider } from "./DozeWell/WakeUpUI/BGFunction/BackgroundProvider";
+import { useStore } from "@nanostores/react";
+import { $bg } from "../store.js";
 
 const Preloader = () => {
+  const bg = useStore($bg);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -10,7 +13,7 @@ const Preloader = () => {
   }, []);
 
   return (
-    <div className="sound-player-bg flex items-center justify-center h-screen">
+    <div className={`${bg} flex items-center justify-center h-screen z-10`}>
       <div className="loader">
         <svg
           className="animate-spin h-12 w-12 text-purple-600"
