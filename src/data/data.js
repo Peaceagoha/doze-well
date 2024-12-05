@@ -82,7 +82,7 @@ export const sliderData = [
   },
   {
     title: "Sleep Tracking",
-    body: "Tailored sleep plans designed to fit your unique needs, helping you achieve restful nights and rejuvenating mornings. vital for tracking user sleep patterns, habits, and progress, enabling personalized recommendations.",
+    body: "Adjusting to personal needs, this tool can effectively mask disruptive noises, creating a serene environment that enhances both focus and relaxation.It helps promote a sense of calm, allowing users to achieve deeper, more restful sleep."
   },
   {
     title: "Basic Analytics",

@@ -15,16 +15,17 @@ const Header = () => {
   return (
     <section className="w-full lg:px-10">
       {/* Desktop and Mobile Header */}
-      <nav className="container mx-auto flex items-center -my-2 justify-between bg-bg-primary px-5 py-5 sm:py-3 rounded-3xl">
+      <nav className=" fixed z-50 container mx-auto flex items-center -my-2 justify-between bg-bg-primary px-5 py-5 sm:py-3 rounded-3xl">
         <h1 className="text-purple-dozewell font-bold sm:text-md text-xl">
           DozeWell
         </h1>
         {/* Desktop Links */}
         <ul className="hidden lg:flex text-white space-x-10">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/features">Features</NavLink>
-          <NavLink to="/how-it-works">How It Works</NavLink>
-          <NavLink to="/testimonials">Testimonials</NavLink>
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#how-it-works">How It Works</a>
+          
         </ul>
 
         {/* Desktop Buttons */}

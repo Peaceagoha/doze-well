@@ -4,7 +4,7 @@ import Slider from "./Slider";
 
 const DiscoverySection = () => {
   return (
-    <section className="bg-[#0A1334]">
+    <section id="features" className="bg-[#0A1334]">
       <section className="py-20 text-white container mx-auto px-5 sm:px-10">
         {/* Heading and Description */}
         <div className="space-y-4 text-center sm:text-left">

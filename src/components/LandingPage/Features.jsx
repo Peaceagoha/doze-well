@@ -2,7 +2,7 @@ import { featuresData } from "../../data/data";
 
 const Features = () => {
   return (
-    <section className="text-white px-6 py-10 sm:px-20 sm:py-24 bg-purple-dark-dozewell">
+    <section id="how-it-works" className="h-screen text-white px-6 py-10 sm:px-20 sm:py-24 bg-purple-dark-dozewell relative">
       <h1 className="text-base md:text-xl font-normal ">
         Experience these benefits and more with our innovative sleep improvement
         app—where better sleep leads to a better you

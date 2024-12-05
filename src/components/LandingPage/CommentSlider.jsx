@@ -1,6 +1,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { commentsData, responsive } from "../../data/data";
 
 const CommentSlider = () => {
@@ -9,6 +9,21 @@ const CommentSlider = () => {
   const visibleCards = 3; // Number of cards visible at a time
   const totalDots = totalCards - visibleCards + 1; // Number of scroll groups
   const carouselRef = useRef(null);
+
+  // Auto-scroll logic
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % totalDots;
+        if (carouselRef.current) {
+          carouselRef.current.goToSlide(nextIndex);
+        }
+        return nextIndex;
+      });
+    }, 3000); // Auto-scroll every 3 seconds
+
+    return () => clearInterval(intervalId); // Cleanup interval on unmount
+  }, [totalDots]);
 
   const handleDotClick = (dotIndex) => {
     setCurrentIndex(dotIndex); // Navigate to the specific dot group
@@ -34,7 +49,7 @@ const CommentSlider = () => {
           setCurrentIndex(calculateActiveDot(nextSlide))
         }
         customTransition="all 0.5s ease"
-        autoPlay={false}
+        autoPlay={false} // Auto-play is managed manually
         infinite={false}
         slidesToSlide={1}
         containerClass="carousel-container"

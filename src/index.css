@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 .bg-hero {
   background-image: url("assets/bg-hero.png");
   background-size: cover;

@@ -3,7 +3,7 @@ import ImageSlider from "./ImageSlider";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen bg-hero">
+    <section id="home" className="relative h-screen bg-hero">
       {/* Floating Header */}
       <div className="absolute top-6 left-0 right-0 mx-auto px-10">
         <Header />
