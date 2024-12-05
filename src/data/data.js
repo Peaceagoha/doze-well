@@ -104,13 +104,13 @@ export const sliderData = [
 
 export const commentsData = [
   {
-    title: "A Game Changer for My Sleep Routine!",
-    body: "I've struggled with insomnia for years, and nothing seemed to work—until I found this app. The guided meditations and sleep tracking have completely transformed my nights. I now fall asleep faster and wake up feeling refreshed. It's like having a personal sleep coach right on my phone!",
+    title: "Finally Sleeping Through the Night!",
+    body: "I used to wake up multiple times during the night and couldn't figure out why. This app helped me identify patterns in my sleep and adjust my bedtime routine. Now, I'm getting uninterrupted sleep, and my energy levels during the day have skyrocketed. I can’t recommend it enough!",
     image: Avatar1,
-    name: "Sarah M.",
-  },
+    name: "Emma Y.",
+},
   {
-    title: "Finally, Peaceful Nights!",
+    title: "Peaceful Nights!",
     body: "As a busy professional, stress often keeps me up at night. This app has been a lifesaver! The calming sounds and bedtime stories help me unwind and relax after a hectic day. I can't imagine going to bed without it now. Highly recommend it to anyone looking to improve their sleep.",
     image: Avatar2,
     name: "David L.",
@@ -122,29 +122,30 @@ export const commentsData = [
     name: "Shola R.",
   },
   {
-    title: "A Game Changer for My Sleep Routine!",
-    body: "I've struggled with insomnia for years, and nothing seemed to work—until I found this app. The guided meditations and sleep tracking have completely transformed my nights. I now fall asleep faster and wake up feeling refreshed. It's like having a personal sleep coach right on my phone!",
-    image: Avatar1,
-    name: "Sarah M.",
-  },
+    title: "Better Sleep, Better Life!",
+    body: "As a working mom, I barely had time to think about my sleep health. This app made it so easy to track my rest and create healthier habits. The insights and tips are spot-on, and I've noticed a huge improvement in my mood and productivity. It's a lifesaver!",
+    image: "https://i.pravatar.cc/150?img=7", 
+    name: "Emily T.",
+},
+{
+  title: "The Ultimate Sleep Companion!",
+  body: "I never realized how much my inconsistent sleep schedule was affecting my health until I started using this app. The gentle reminders and tailored suggestions have made all the difference. I now wake up feeling energized and ready to take on the day. This app is a game-changer!",
+  image: "https://i.pravatar.cc/150?img=8", // Replace with the appropriate image variable
+  name: "Michael B.",
+},
+
+{
+  title: "A Life-Changing Experience!",
+  body:"I had no idea how much my sleep was affecting my day-to-day life until I started tracking it with this app. The insights and recommendations it provided helped me make small, yet impactful changes to my nightly routine. After following its guidance. It’s been a life-changing experience!",
+  image: "https://i.pravatar.cc/150?img=5", // Avatar link
+  name: "Olivia M.",
+},
   {
-    title: "Finally, Peaceful Nights!",
-    body: "As a busy professional, stress often keeps me up at night. This app has been a lifesaver! The calming sounds and bedtime stories help me unwind and relax after a hectic day. I can't imagine going to bed without it now. Highly recommend it to anyone looking to improve their sleep.",
-    image: Avatar2,
-    name: "David L.",
-  },
-  {
-    title: "Perfect for My Kids",
-    body: "My kids used to resist bedtime, but with the soothing lullabies and gentle sleep stories in this app, they now look forward to it! We've noticed a big difference in their sleep quality, and they wake up happier. It's become an essential part of our nightly routine.",
-    image: Avatar3,
-    name: "Shola R.",
-  },
-  {
-    title: "Perfect for My Kids",
-    body: "My kids used to resist bedtime, but with the soothing lullabies and gentle sleep stories in this app, they now look forward to it! We've noticed a big difference in their sleep quality, and they wake up happier. It's become an essential part of our nightly routine.",
-    image: Avatar3,
-    name: "Shola R.",
-  },
+    title: "My Productivity Skyrocketed!",
+    body: "I never realized how much a consistent sleep routine could truly transform my life until I started using this app. After tracking my patterns and making small adjustments, I've noticed a huge improvement. This app has been an invaluable tool, and I’m incredibly grateful for it!",
+    image: "https://i.pravatar.cc/150?img=23",
+    name: "Sophia L.",
+},
 ];
 
 export const featuresData = [
