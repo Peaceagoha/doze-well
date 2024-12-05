@@ -2,7 +2,7 @@ import CommentSlider from "./CommentSlider";
 
 const Comments = () => {
   return (
-    <section className="bg-[#0A1334] md:py-20">
+    <section id="testimonials" className="bg-[#0A1334] md:py-20">
       <div className="py-10  text-white container mx-auto px-10 space-y-4">
         <h1 className="md:text-4xl text-base font-bold">
           Join Thousands of Happy Sleepers!
