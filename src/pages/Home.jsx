@@ -1,31 +1,43 @@
-import Header from "../components/Header";
-
-import Hero from "../components/Hero";
-import DisocverySection from "../components/DisocverySection";
-import Comments from "../components/Comments";
-import Features from "../components/Features";
-import Subscription from "../components/Subscription";
-import FAQ from "../components/FAQ";
-import Newsletter from "../components/Newsletter";
-import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+import Preloader from "../components/Loader";
+import Hero from "../components/LandingPage/Hero";
+import DisocverySection from "../components/LandingPage/DisocverySection";
+import Comments from "../components/LandingPage/Comments";
+import Features from "../components/LandingPage/Features";
+import Subscription from "../components/LandingPage/Subscription";
+import FAQ from "../components/LandingPage/FAQ";
+import Newsletter from "../components/LandingPage/Newsletter";
+import Footer from "../components/LandingPage/Footer";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="font-primary">
-      <div className=" bg-bg-primary bg-opacity-80">
-        <Header />
-        <Hero />
-        <div className="bg-[#0A1334]">
-        <DisocverySection />
-          <Comments />
-          <Features />
-          <Subscription />
-          <FAQ />
-          <Newsletter />
+    <>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <div className="font-primary">
+          <div className=" bg-bg-primary bg-opacity-80">
+            <Hero />
+            <div className="bg-[#0A1334]">
+              <DisocverySection />
+              <Comments />
+              <Features />
+              <Subscription />
+              <FAQ />
+              <Newsletter />
+            </div>
+            <Footer />
+          </div>
         </div>
-      <Footer />
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 .bg-hero {
   background-image: url("assets/bg-hero.png");
   background-size: cover;
@@ -10,11 +13,37 @@
   background-repeat: no-repeat;
 }
 
+/* Backgrounds */
 .sound-player-bg {
   background-image: url("assets/bg-dashboard.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.bg-comfortable {
+  background-image: url("assets/bg-dashboard_2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.bg-serene {
+  background-image: url("assets/bg-dashboard_3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.bg-calm {
+  background-image: url("assets/bg-dashboard_4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
 }
 
 .video-container {
@@ -26,5 +55,86 @@
 }
 
 .nav-dot.active {
-  background-color: #391E8A;
+  background-color: rgb(139, 103, 139);
+}
+
+/* Preloader */
+.loader svg {
+  animation: spin 1s linear infinite;
+}
+/* nav bar */
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.nav__bar {
+  padding: 20px;
+}
+.doze__well {
+  font-size: 23px;
+}
+.nav__link {
+  color: hwb(0 87% 13%);
+  font-weight: 200;
+  display: flex;
+  gap: 20px;
+}
+.arrow {
+  font-size: 27px;
+  margin-left: 9px;
+  font-weight: bold;
+  background-color: #7774a7;
+}
+.card__text {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 30px;
+}
+.button__card {
+  font-weight: 500;
+}
+.second__slider {
+  font-family: "Lato", sans-serif;
+}
+.p__text {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  opacity: 75%;
+  width: 80%;
+}
+.dot__three {
+  background-color: #7774a7;
+}
+/*Subscription*/
+.sub__card__middle {
+  height: 600px;
+  padding-top: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+}
+.sub__bg {
+  background-color: #706d9b;
+}
+.sub__button {
+  margin-left: 23px;
+  width: 300px;
+  border-radius: 15px;
+  font-size: 15px;
+}
+.sub__card {
+  height: 530px;
+  padding-top: 45px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
