@@ -7,10 +7,13 @@ const Accordion = ({ text }) => {
 
   return (
     <div className="border-b-2 border-b-gray-dark-dozewell py-4 space-y-4">
-      <div className="flex items-center justify-between ">
+      <div
+        onClick={() => setVisible(!visible)}
+        className="flex items-center cursor-pointer justify-between "
+      >
         <p>{text}</p>
         <img
-          onClick={() => setVisible(!visible)}
+          // onClick={() => setVisible(!visible)}
           className={`w-3 cursor-pointer ${
             visible ? "rotate-180" : ""
           } transition-transform duration-300 ease-in`}

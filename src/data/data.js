@@ -86,19 +86,7 @@ export const sliderData = [
   },
   {
     title: "Basic Analytics",
-    body: "AdjusBy analysing metrics such as sleep duration, wake-ups, and relaxation time, the app can provide actionable insights to help users identify and address sleep disruptors, leading to improved sleep hygiene and overall well-being..",
-  },
-  {
-    title: "Basic Analytics",
-    body: "AdjusBy analysing metrics such as sleep duration, wake-ups, and relaxation time, the app can provide actionable insights to help users identify and address sleep disruptors, leading to improved sleep hygiene and overall well-being..",
-  },
-  {
-    title: "Basic Analytics",
-    body: "AdjusBy analysing metrics such as sleep duration, wake-ups, and relaxation time, the app can provide actionable insights to help users identify and address sleep disruptors, leading to improved sleep hygiene and overall well-being..",
-  },
-  {
-    title: "Basic Analytics",
-    body: "AdjusBy analysing metrics such as sleep duration, wake-ups, and relaxation time, the app can provide actionable insights to help users identify and address sleep disruptors, leading to improved sleep hygiene and overall well-being..",
+    body: "Adjusting analysing metrics such as sleep duration, wake-ups, and relaxation time, the app can provide actionable insights to help users identify and address sleep disruptors, leading to improved sleep hygiene and overall well-being..",
   },
 ];
 
