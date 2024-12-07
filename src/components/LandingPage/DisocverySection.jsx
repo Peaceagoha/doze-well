@@ -5,7 +5,7 @@ import Slider from "./Slider";
 const DiscoverySection = () => {
   return (
     <section id="features" className="bg-[#0A1334]">
-      <section className="py-20 text-white container mx-auto px-5 sm:px-10">
+      <section className="md:pt-20 text-white container mx-auto px-5 sm:px-10">
         {/* Heading and Description */}
         <div className="space-y-4 text-center sm:text-left">
           <h1 className="text-lg sm:text-xl md:text-2xl font-bold">
@@ -25,10 +25,11 @@ const DiscoverySection = () => {
 
         {/* Video Section */}
         <section className="md:py-20 py-10">
-          <h1 className="text-base md:text-lg lg:text-xl text-center md:text-left md:w-4/5 mx-auto ">
-            Achieve better sleep and a healthier lifestyle with our app. Start
-            your journey to restful nights and vibrant days today.
+          <h1 className=" text-lg sm:text-xl md:text-2xl font-bold">
+            Achieve better sleep and a healthier lifestyle with our app.
           </h1>
+
+          <h2 className="md:my-3 my-2 font-light text-sm sm:text-base opacity-75">Start your journey to restful nights and vibrant days today.</h2>
 
           <main className="pt-6 flex flex-col lg:flex-row gap-10 items-center">
             {/* Video Image */}

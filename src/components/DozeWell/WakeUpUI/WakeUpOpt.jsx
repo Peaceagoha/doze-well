@@ -11,9 +11,8 @@ const WakeUpOptimization = ({ className = "" }) => (
           <h1 className="text-white font-bold text-[15px] md:text-xl capitalize">
             Set Wake up Alarm
           </h1>
-          <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] px-2 md:px-[15px] text-white capitalize text-sm font-bold rounded-lg">
+          <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] w-fit px-10 md:px-20 md:-mr-2 text-white capitalize text-sm font-bold rounded-lg">
             dance my tune
-            <ChevronDown />
           </span>
           <label className="inline-flex items-center cursor-pointer">
             <input type="checkbox" value="" className="sr-only peer" />
@@ -25,9 +24,8 @@ const WakeUpOptimization = ({ className = "" }) => (
           <h1 className="text-white font-bold text-[15px] md:text-xl capitalize">
             Sleeping Environment
           </h1>
-          <span className="flex items-center justify-center gap-3 h-[55px] bg-[#4B0082] px-6 md:px-[15px] text-white capitalize text-sm font-bold rounded-lg">
+          <span className="flex items-center justify-center gap-3 px-10 h-[55px] bg-[#4B0082] md:px-20 w-fit  text-white capitalize text-sm font-bold rounded-lg">
             Comfortable
-            <ChevronDown />
           </span>
           <label className="inline-flex items-center cursor-pointer">
             <input type="checkbox" value="" className="sr-only peer" />
@@ -39,7 +37,7 @@ const WakeUpOptimization = ({ className = "" }) => (
           <h1 className="text-white font-bold text-xl capitalize">
             Sleep Time
           </h1>
-          <span className="flex items-center justify-center gap-3 h-[55px] ml-14 md:ml-[300px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
+          <span className="flex items-center justify-center gap-3 h-[55px] ml-[180px] md:ml-[280px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
             23:10
           </span>
         </div>
@@ -48,7 +46,7 @@ const WakeUpOptimization = ({ className = "" }) => (
           <h1 className="text-white font-bold text-xl capitalize">
             Sleep Time
           </h1>
-          <div className="flex items-center justify-center md:ml-[230px] gap-4">
+          <div className="flex items-center justify-center ml-[120px] md:ml-[230px] gap-4">
             <span className="flex items-center justify-center gap-3 h-[55px] ml-md:[250px] bg-[#4B0082] px-[15px] text-white capitalize font-bold rounded-lg">
               Monday
             </span>
