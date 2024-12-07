@@ -1,28 +1,67 @@
+import { useNavigate } from "react-router-dom";
+import { FaHandHolding, FaHandHoldingUsd, FaHandHoldingHeart } from "react-icons/fa";
 import desktopPlayer from "../../assets/desktop-player.png";
 import mobilePlayer from "../../assets/mobile-player.png";
 import Box from "../../assets/box.png";
 import Check from "../../assets/check.png";
 import { pricePlan } from "../../data/data";
+import { useSwipeable } from "react-swipeable";
+import { useState, useEffect } from "react";
 
 const Subscription = () => {
+  const navigate = useNavigate();
+  const [isTablet, setIsTablet] = useState(false);
+
+  // Check if the screen is a tablet
+  useEffect(() => {
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsTablet(width >= 768 && width <= 1024);
+    };
+
+    checkScreenSize(); // Initial check
+    window.addEventListener("resize", checkScreenSize); // Add event listener for resize
+
+    return () => window.removeEventListener("resize", checkScreenSize); // Cleanup
+  }, []);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => console.log("Swiped Left"),
+    onSwipedRight: () => console.log("Swiped Right"),
+    trackMouse: true, // Allow mouse swipe for testing on desktops
+  });
+
+  const handleNavigate = () => {
+    navigate("/userAuth");
+  };
+
   return (
     <section className="text-white flex-row items-center justify-center px-6 py-10 sm:px-20 sm:py-24">
       <div className="m-auto">
-        <img src={desktopPlayer} className="md:block hidden" alt="" />
-        <img src={mobilePlayer} className="md:hidden" alt="" />
+        <img src={desktopPlayer} className="md:block hidden" alt="" onClick={handleNavigate} />
+        <img src={mobilePlayer} className="md:hidden" alt="" onClick={handleNavigate} />
       </div>
 
-      <main className="py-10  sm:py-24">
+      <main className="py-10 sm:py-24">
         <div className="space-y-4">
-          <h1 className="font-bold text-lg md:text-2xl ">Subscription</h1>
-          <p className="text-base font-light">Never miss a good night sleep</p>
+          <h1 className="font-bold text-lg md:text-2xl">Subscription</h1>
+          <p className="sub__font text-base font-light">Never miss a good night's sleep</p>
         </div>
-        {/* Price Plan Wrapper */}
-        <div className="py-8 flex md:flex-row flex-col justify-center gap-8 items-center">
+
+        {/* Wrapper for Swipeable Cards */}
+        <div
+          {...(isTablet ? swipeHandlers : {})} // Apply swipe handlers only for tablets
+          className={`py-8 flex md:flex-row flex-col items-center ${
+            isTablet ? "overflow-x-auto scrollbar-hide" : ""
+          } gap-2 md:gap-1/2 sub`}
+        >
           {/* Price Plan Card 1 */}
-          <div className="sub__card sub__bg leading-7 rounded-3xl flex flex-col gap-6 flex-1 mx-3">
-            <div className="flex items-center gap-4">
-              <img src={Box} alt="" />
+          <div className="sub__card sub__bg leading-7 flex flex-col gap-2 relative">
+            <div className="flex items-center gap-2 relative">
+              <img src={Box} alt="" className="relative" />
+              <div className="icon">
+                <FaHandHolding className="absolute top-1/2 left-1/2 transform -translate-x-[5px] -translate-y-[23px] text-white text-4xl" />
+              </div>
               <div>
                 <h2>Free Plan (Basic)</h2>
                 <p>Price: $0/month</p>
@@ -30,58 +69,62 @@ const Subscription = () => {
             </div>
             <div className="space-y-4">
               {pricePlan.slice(0, 5).map((plan, i) => (
-                <div key={i} className="flex gap-4 items-center text-white mx-3">
+                <div key={i} className="flex gap-2 items-center text-white mx-3">
                   <img src={Check} alt="" />
-                  <p className="font-medium text-base">{plan.text}</p>
+                  <p className="sub__text font-small text-base">{plan.text}</p>
                 </div>
               ))}
             </div>
-
-            <button className="sub__button bg-purple-dark-dozewell py-4 rounded-lg my-7">
-              Sign Up for free
+            <button onClick={handleNavigate} className="sub__button bg-purple-dark-dozewell py-4 rounded-lg my-[120px]">
+              Sign Up for Free
             </button>
           </div>
+
           {/* Price Plan Card 2 */}
-          <div className="sub__card__middle sub__bg rounded-3xl flex flex-col gap-10 flex-1">
-            <div className="flex items-center gap-4">
-              <img src={Box} alt="" />
+          <div className="sub__card__middle sub__bg flex flex-col gap-2 relative">
+            <div className="flex items-center gap-4 relative">
+              <img src={Box} alt="" className="relative" />
+              <FaHandHoldingUsd className="absolute top-1/2 left-6 transform -translate-x-[5px] -translate-y-[20px] text-white text-4xl" />
               <div>
-                <h2>Plus plan (intermediate)</h2>
+                <h2>Plus Plan (Intermediate)</h2>
                 <p>Price: $9.99/month</p>
               </div>
             </div>
             <div className="space-y-4">
               {pricePlan.slice(5, 11).map((plan, i) => (
-                <div key={i} className="flex gap-4 items-center text-white mx-3">
+                <div key={i} className="flex gap-2 items-center text-white mx-3">
                   <img src={Check} alt="" />
                   <p className="font-small text-l leading-7">{plan.text}</p>
                 </div>
               ))}
             </div>
-
-            <button className=" sub__button bg-purple-dark-dozewell py-4 ">
-              Start free trial
+            <button onClick={handleNavigate} className="sub__button bg-purple-dark-dozewell ml-2 my-8 py-4">
+              Start Free Trial
             </button>
           </div>
-          <div className="sub__card sub__bg rounded-3xl flex flex-col gap-6 flex-1">
-            <div className="flex items-center gap-4">
+
+          {/* Price Plan Card 3 */}
+          <div className="sub__card__right sub__bg flex flex-col gap-2">
+            <div className="flex items-center gap-2">
               <img src={Box} alt="" />
+              <div className="icon">
+                <FaHandHoldingHeart className="absolute top-1/2 left-[1px] transform -translate-x-[5px] -translate-y-[18px] text-white text-4xl" />
+              </div>
               <div>
-                <h2>Premium plan</h2>
+                <h2>Premium Plan</h2>
                 <p>Price: $19.99/month</p>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 relative">
               {pricePlan.slice(11, 18).map((plan, i) => (
-                <div key={i} className="flex gap-4 items-center text-white ">
-                  <img src={Check} alt="" />
-                  <p className="font-small text-base mx-3">{plan.text}</p>
+                <div key={i} className="flex gap-2 items-center text-white relative">
+                  <img src={Check} alt="" className="relative" />
+                  <p className="sub__font mx-3">{plan.text}</p>
                 </div>
               ))}
             </div>
-
-            <button className="sub__button bg-purple-dark-dozewell py-4 rounded-lg">
-              Start free trial
+            <button onClick={handleNavigate} className="sub__button bg-purple-dark-dozewell py-4 my-5 rounded-lg">
+              Start Free Trial
             </button>
           </div>
         </div>

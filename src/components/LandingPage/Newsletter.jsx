@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Newsletter = () => {
   return (
     <section className="py-10">
@@ -15,12 +16,13 @@ const Newsletter = () => {
             placeholder="Enter your email"
             style={{ borderRadius: "10px 0 0 10px" }}
           />
-          <button
+          <Link
+            to = "/userAuth"
             className="bg-bg-primary text-white font-semibold text-base sm:text-lg px-6 py-4 md:w-auto hover:bg-purple-700 transition duration-300"
             style={{ borderRadius: "0 10px 10px 0" }}
           >
             Subscribe
-          </button>
+          </Link>
         </div>
       </div>
     </section>

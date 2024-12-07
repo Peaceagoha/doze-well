@@ -23,6 +23,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^6.28.0",
+    "react-swipeable": "^7.0.2",
     "recharts": "^2.13.3"
   },
   "devDependencies": {

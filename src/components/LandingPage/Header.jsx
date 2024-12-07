@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <section className="w-full lg:px-10">
       {/* Desktop and Mobile Header */}
-      <nav className=" fixed z-50 container mx-auto flex items-center -my-2 justify-between bg-bg-primary px-5 py-5 sm:py-3 rounded-3xl">
+      <nav className="nav fixed z-50 container mx-auto flex items-center -my-2 justify-between bg-bg-primary px-5 py-5 sm:py-3 rounded-3xl">
         <h1 className="text-purple-dozewell font-bold sm:text-md text-xl">
           DozeWell
         </h1>
