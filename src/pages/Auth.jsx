@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import Preloader from "../components/Loader";
+import { useDispatch } from "react-redux";
+import { showToast } from "../store/toast";
 import sleepImage from "../assets/AuthBed.png";
 import googleProviderImg from "../assets/devicon_google@2x.png";
 import appleProviderImg from "../assets/mage_apple.png";
@@ -9,223 +11,378 @@ import Input from "../components/LandingPage/Input";
 import MaskImage from "../assets/Mask group.png";
 import SecondMaskImage from "../assets/SecondMaskgroup.png";
 import lastMaskImag from "../assets/ishaseePhone.png";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { auth } from "../config/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+  updateProfile,
+} from "firebase/auth";
 
 const Auth = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const [userCredentials, setUserCredentials] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [loginCredentials, setLoginCredentials] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleCredentials = (e) => {
+    const { name, value } = e.target;
+    setUserCredentials((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const handleLoginCredentials = (e) => {
+    const { name, value } = e.target;
+    setLoginCredentials((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible((prev) => !prev);
+  };
+
+  const toggleLoginModal = () => {
+    setIsLoginModalOpen((prev) => !prev);
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleSignup = async (e) => {
+    e.preventDefault();
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        userCredentials.email,
+        userCredentials.password
+      );
+
+      const user = userCredential.user;
+
+      // Update profile with display name
+      await updateProfile(user, {
+        displayName: `${userCredentials.firstName} ${userCredentials.lastName}`,
+      });
+
+      setUserCredentials({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+      });
+
+      dispatch(
+        showToast({
+          type: "success",
+          message: "Signup successful!",
+        })
+      );
+
+      toggleLoginModal();
+
+      // console.log("User signed up:");
+    } catch (error) {
+      dispatch(
+        showToast({
+          type: "error",
+          message: ("Error signing up:", error.code, error.message),
+        })
+      );
+      // console.error("Error signing up:", error.code, error.message);
+    }
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        loginCredentials.email,
+        loginCredentials.password
+      );
+
+      setLoginCredentials({
+        email: "",
+        password: "",
+      });
+
+      dispatch(
+        showToast({
+          type: "success",
+          message: "Login successful!",
+        })
+      );
+
+      navigate("/dozewell/soundplayer");
+    } catch (error) {
+      dispatch(
+        showToast({
+          type: "success",
+          message: ("Error signing in:", error.code, error.message),
+        })
+      );
+      // console.error("Error signing in:", error.code, error.message);
+    }
+  };
+
+  const handlePasswordReset = () => {
+    const email = prompt("Please enter your email");
+    sendPasswordResetEmail(auth, email);
+    alert("Email sent! Check your inbox for password reset instructions.");
+  };
+
   return (
     <>
       {isLoading ? (
         <Preloader />
       ) : (
-        <section className="flex flex-col justify-start bg-bg-primary h-fit">
+        <section className="flex flex-col justify-start bg-bg-primary min-h-screen">
           <NavLink
             to="/"
-            className="text-dozwell-green text-left px-5 py-5 md:px-11 md:py-4 text-3xl font-bold"
+            className="text-dozwell-green px-5 py-5 md:px-11 md:py-4 text-3xl font-bold"
           >
             DozeWell
           </NavLink>
-          <div className="flex items-center justify-between w-full px-[5vw] py-10 gap-4">
-            {/* First Side Of Auth Hero */}
-            <aside className="flex w-full flex-col items-center justify-start md:w-1/2">
-              <h1 className="text-white font-bold text-3xl md:text-5xl capitalize">
-                Join For Better Sleep
-              </h1>
-              <p className="text-gray-light-dozewell font-extralight font-Satoshi md:text-2xl text-lg py-9 md:px-5 w-full text-center">
-                Are you ready to take the next step to enhance a better sleep
-                experience? Look no further than
-                <span className="text-dozwell-green font-bold"> DozeWell!</span>
-              </p>
-
-              {/* SIGN UP CTAs */}
-              <div className="w-full items-center justify-center gap-7">
-                <button
-                  className="w-full h-[55px] rounded-lg bg-purple-dozewell text-gray-light-dozewell flex items-center justify-center gap-5 mt-5 text-lg capitalize
-                "
-                >
-                  <img
-                    src={appleProviderImg}
-                    className="w-[24px] h-[23px]"
-                    alt="provider pics"
-                  />
-                  continue with apple
-                </button>
-                <button
-                  className="w-full h-[55px] rounded-lg bg-purple-dozewell text-gray-light-dozewell flex items-center justify-center gap-5 mt-5 text-lg capitalize
-                "
-                >
-                  <img
-                    src={googleProviderImg}
-                    className="w-[24px] h-[23px]"
-                    alt="provider pics"
-                  />
-                  continue with google
-                </button>
+          <div className="flex flex-col md:flex-row items-center px-5 py-10 gap-8">
+            {/* Left Section */}
+            <aside className="w-full md:w-1/2 flex flex-col items-center">
+              <div className="px-10">
+                <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
+                  Join For Better Sleep
+                </h1>
+                <p className="text-gray-light-dozewell font-light text-lg md:text-xl py-6 px-10 text-center">
+                  Are you ready to enhance your sleep experience? Join{" "}
+                  <span className="text-dozwell-green font-bold">DozeWell</span>{" "}
+                  today!
+                </p>
               </div>
 
-              {/* Or Line */}
-              <div className="flex w-full py-5 text-gray-light-dozewell mt-10 gap-4 items-center justify-center">
-                <hr className="w-full bg-white p-[1px]" />
-                Or
-                <hr className="w-full bg-white p-[1px]" />
-              </div>
-
-              {/* SIGN UP FORM */}
-
-              <form className="w-full flex flex-col items-center justify-center">
-                <div className="flex w-full justify-between items-center gap-10">
+              <form className="w-full max-w-md flex flex-col gap-4">
+                <div className="flex gap-4">
                   <Input
-                    inputName="firstName"
+                    name="firstName"
                     inputType="text"
-                    inputPlaceholder="first name"
+                    inputPlaceholder="First Name"
+                    value={userCredentials.firstName}
+                    onChange={(e) => handleCredentials(e)}
                   />
                   <Input
-                    inputName="lastName"
+                    name="lastName"
                     inputType="text"
-                    inputPlaceholder="last name"
+                    inputPlaceholder="Last Name"
+                    value={userCredentials.lastName}
+                    onChange={(e) => handleCredentials(e)}
                   />
                 </div>
                 <Input
-                  inputName="email"
+                  name="email"
                   inputType="email"
-                  inputPlaceholder="email"
+                  inputPlaceholder="Email"
+                  value={userCredentials.email}
+                  onChange={(e) => handleCredentials(e)}
                 />
-                <Input
-                  inputName="password"
-                  inputType="password"
-                  inputPlaceholder="password"
-                />
-
-                <div className="flex w-full items-center justify-center p-5">
-                  <input
-                    id="link-checkbox"
-                    type="checkbox"
-                    value=""
-                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                <div className="relative">
+                  <Input
+                    name="password"
+                    inputType={isPasswordVisible ? "text" : "password"}
+                    inputPlaceholder="Password"
+                    value={userCredentials.password}
+                    onChange={(e) => handleCredentials(e)}
                   />
-                  <label
-                    htmlFor="link-checkbox"
-                    className="ms-2 text-sm font-light text-gray-light-dozewell"
+                  <div
+                    className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-white hover:text-black"
+                    onClick={togglePasswordVisibility}
                   >
-                    Yes, I agree and understand DozeWell Terms of Service.
+                    {isPasswordVisible ? (
+                      <AiOutlineEyeInvisible />
+                    ) : (
+                      <AiOutlineEye />
+                    )}
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-gray-light-dozewell">
+                  <input type="checkbox" id="terms" className="w-4 h-4" />
+                  <label htmlFor="terms">
+                    I agree to DozeWell&apos;s Terms of Service.
                   </label>
                 </div>
+                <button
+                  onClick={handleSignup}
+                  className="bg-purple-dozewell text-gray-light-dozewell py-3 rounded-lg text-lg hover:bg-purple-dozewell-light !important"
+                >
+                  Create an Account
+                </button>
 
-                <Input
-                  inputValue="Create an account"
-                  inputName="button"
-                  inputType="button"
-                />
-
-                <div className="flex w-full items-center justify-start p-5">
+                <div className="flex w-full items-center justify-start">
                   <p className="text-gray-light-dozewell text-lg font-light">
                     Already have an account?{" "}
-                    <span className="text-dozwell-green underline font-bold">
+                    <span
+                      className="text-dozwell-green underline font-bold cursor-pointer"
+                      onClick={toggleLoginModal}
+                    >
                       Login
                     </span>
                   </p>
                 </div>
               </form>
+
+              <div className="flex items-center justify-center gap-3 text-gray-light-dozewell py-6 w-full max-w-md">
+                <hr className="flex-1 border-gray-light-dozewell" />
+                Or
+                <hr className="flex-1 border-gray-light-dozewell" />
+              </div>
+
+              <div className="w-full flex flex-col items-center gap-4">
+                <button className="w-full max-w-md flex items-center justify-center gap-3 bg-purple-dozewell text-gray-light-dozewell rounded-lg py-3">
+                  <img
+                    src={appleProviderImg}
+                    alt="Apple logo"
+                    className="w-6 h-6"
+                  />
+                  Continue with Apple
+                </button>
+                <button className="w-full max-w-md flex items-center justify-center gap-3 bg-purple-dozewell text-gray-light-dozewell rounded-lg py-3">
+                  <img
+                    src={googleProviderImg}
+                    alt="Google logo"
+                    className="w-6 h-6"
+                  />
+                  Continue with Google
+                </button>
+              </div>
             </aside>
 
-            {/* Second Side Of Auth Hero */}
-            <main className="w-1/2 hidden items-center justify-center md:flex">
+            {/* Right Section */}
+            <main className="hidden md:flex md:w-1/2 justify-center">
               <img
                 src={sleepImage}
-                alt="sleeping boy"
-                className="h-[550px] w-[550px]"
+                alt="Sleeping illustration"
+                className="w-3/4 h-auto animate-shake"
               />
             </main>
           </div>
 
-          <section className="">
-            <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-              <img className="w-full" src={MaskImage} alt="dashboard image" />
-              <div className="mt-4 md:mt-0">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-light-dozewell">
-                  Fall asleep with ease
-                </h2>
-                <p className="mb-6 font-light text-gray-light-dozewell md:text-lg">
-                  DozeWell provides a comprehensive collection of calming
-                  sounds, relaxation guides, and sleep stories, all crafted to
-                  help you drift off to sleep more easily..
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="">
-            <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:flex md:flex-row-reverse sm:py-16 lg:px-6">
-              <img
-                className="w-full"
-                src={SecondMaskImage}
-                alt="dashboard image"
-              />
-              <div className="mt-4 md:mt-0">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-light-dozewell">
-                  Wake up felling rested
-                </h2>
-                <p className="mb-6 font-light text-gray-light-dozewell md:text-lg">
-                  DozeWell smart alarm, together with its carefully designed
-                  alarm sounds, wakes you up gently during your lightest sleep
-                  phase, helping you feel more rested and recovered to face the
-                  day ahead.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="">
-            <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-              <img
-                className="w-full"
-                src={lastMaskImag}
-                alt="dashboard image"
-              />
-              <div className="mt-4 md:mt-0">
-                <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-light-dozewell">
-                  Understand your sleep
-                </h2>
-                <p className="mb-6 font-light text-gray-light-dozewell md:text-lg">
-                  While you are asleep, DozeWell uses it’s patented sound
-                  analysis to map your sleep patterns and sleep environment.
-                  Find out everything from how much sleep to how much you snore
-                  or cough during the night.
-                </p>
-              </div>
-            </div>
-          </section>
-          {/* BOTTOM SIGN UP CTAs */}
-          <div className="w-full block px-[20px] md:flex md:px-[10vw] py-6 items-center justify-center gap-7">
-            <button
-              className="w-full h-[55px] rounded-lg bg-purple-dozewell text-gray-light-dozewell flex items-center justify-center gap-5 mt-5 text-lg capitalize
-                "
+          {/* Feature Sections */}
+          {[
+            {
+              img: MaskImage,
+              title: "Fall asleep with ease",
+              description:
+                "DozeWell provides calming sounds, relaxation guides, and sleep stories to help you drift off easily.",
+            },
+            {
+              img: SecondMaskImage,
+              title: "Wake up feeling rested",
+              description:
+                "Our smart alarm wakes you during your lightest sleep phase for a refreshing start to your day.",
+            },
+            {
+              img: lastMaskImag,
+              title: "Understand your sleep",
+              description:
+                "DozeWell analyzes your sleep patterns and environment, giving insights into your nightly rest.",
+            },
+          ].map((section, index) => (
+            <section
+              key={index}
+              className={`flex flex-col md:flex-row ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              } items-center gap-8 px-6 py-10`}
             >
               <img
-                src={appleProviderImg}
-                className="w-[24px] h-[23px]"
-                alt="provider pics"
+                src={section.img}
+                alt={section.title}
+                className="w-full md:w-1/2"
               />
-              continue with apple
-            </button>
-            <button
-              className="w-full h-[55px] rounded-lg bg-purple-dozewell text-gray-light-dozewell flex items-center justify-center gap-5 mt-5 text-lg capitalize
-                "
-            >
-              <img
-                src={googleProviderImg}
-                className="w-[24px] h-[23px]"
-                alt="provider pics"
-              />
-              continue with google
-            </button>
-          </div>
+              <div className="flex flex-col items-start md:w-1/2">
+                <h2 className="text-white text-3xl font-bold mb-4">
+                  {section.title}
+                </h2>
+                <p className="text-gray-light-dozewell text-xl font-light">
+                  {section.description}
+                </p>
+              </div>
+            </section>
+          ))}
 
+          {/* Footer */}
           <Footer />
+          {/* Login Modal */}
+          {isLoginModalOpen && (
+            <div className="fixed inset-0 bg-purple-dozewell-light bg-opacity-75 flex items-center justify-center z-50">
+              <div className="bg-black text-white rounded-lg shadow-lg p-8 w-full max-w-md relative">
+                <div className="flex justify-between items-center mb-6">
+                  <h2 className="text-2xl font-bold">Login</h2>
+                  <button
+                    className="text-gray-400 hover:text-gray-200 transition"
+                    onClick={toggleLoginModal}
+                    aria-label="Close modal"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <form>
+                  <Input
+                    name="email"
+                    inputType="email"
+                    inputPlaceholder="Email"
+                    value={loginCredentials.email}
+                    onChange={(e) => handleLoginCredentials(e)}
+                  />
+                  <div className="relative mt-4">
+                    <Input
+                      name="password"
+                      inputType={isPasswordVisible ? "text" : "password"}
+                      inputPlaceholder="Password"
+                      value={loginCredentials.password}
+                      onChange={(e) => handleLoginCredentials(e)}
+                    />
+                    <div
+                      className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-400 hover:text-gray-200"
+                      onClick={togglePasswordVisibility}
+                    >
+                      {isPasswordVisible ? (
+                        <AiOutlineEyeInvisible />
+                      ) : (
+                        <AiOutlineEye />
+                      )}
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleLogin}
+                    className="w-full bg-purple-dozewell text-gray-light-dozewell text-white py-3 rounded-lg mt-6"
+                  >
+                    Login
+                  </button>
+
+                  <p onClick={handlePasswordReset} className="text-right mt-2">
+                    Forgot Password
+                  </p>
+                </form>
+              </div>
+            </div>
+          )}
         </section>
       )}
     </>

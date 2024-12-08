@@ -20,7 +20,12 @@ const Features = () => {
             className="flex-1 flex flex-col items-center text-center sm:items-start sm:text-left gap-4 max-w-xs sm:max-w-md md:max-w-lg md:gap-3"
           >
             {/* Feature Image */}
-            <img className="w-48 self-center" src={feature.image} alt="" />
+            <img
+              className="w-48 h-48 self-center animate-breathing"
+              src={feature.image}
+              alt="feature-img"
+            />
+
             {/* Feature Title */}
             <h1 className="text-lg opacity-80 font-bold md:w-19 md:text-[14px] text-purple-dozewell">
               {feature.title}

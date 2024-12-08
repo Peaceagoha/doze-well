@@ -1,11 +1,16 @@
-import { NavLink, useNavigate, Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import MenuIcon from "../../assets/menu_icon.png";
 import CloseIcon from "../../assets/cross_icon.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectUsers } from "../../store/user";
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
   const navigate = useNavigate();
+
+  // Get the current user from Redux store
+  const currentUser = useSelector(selectUsers).currentUser;
 
   const handleToggleMenu = () => {
     setVisible((prev) => !prev);
@@ -13,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <section className="w-full lg:px-10">
+    <section className="relative container lg:px-10">
       {/* Desktop and Mobile Header */}
       <nav className="nav fixed z-50 container mx-auto flex items-center -my-2 justify-between bg-bg-primary px-5 py-5 sm:py-3 rounded-3xl">
         <h1 className="text-purple-dozewell font-bold sm:text-md text-xl">
@@ -25,20 +30,28 @@ const Header = () => {
           <a href="#features">Features</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#how-it-works">How It Works</a>
-          
         </ul>
 
         {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link to="/userAuth" className="text-white">
-            Login
-          </Link>
-          <button
-            className="text-purple-dozewell border border-purple-dozewell px-8 rounded-3xl py-2"
-            onClick={() => navigate("/dozewell/soundplayer")}
-          >
-            Try for free
-          </button>
+          {currentUser ? (
+            <>
+              {/* If logged in, show the "Go to App" button */}
+              <button
+                className="text-purple-dozewell border border-purple-dozewell px-8 rounded-3xl py-2"
+                onClick={() => navigate("/dozewell/soundplayer")}
+              >
+                Go to App
+              </button>
+            </>
+          ) : (
+            <button
+              className="text-purple-dozewell border border-purple-dozewell px-8 rounded-3xl py-2"
+              onClick={() => navigate("/login")}
+            >
+              Try for free
+            </button>
+          )}
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -92,21 +105,28 @@ const Header = () => {
             >
               Testimonials
             </NavLink>
-            <NavLink
-              to="/userAuth"
-              onClick={handleToggleMenu}
-              className="py-2 border-b border-b-purple-dozewell"
-            >
-              Login
-            </NavLink>
-            <NavLink
-              to="/dozewell/soundplayer"
-              onClick={handleToggleMenu}
-              className="text-purple-dozewell border border-purple-dozewell text-center rounded-3xl py-2"
-              style={{ width: "140px" }}
-            >
-              Try for free
-            </NavLink>
+
+            {currentUser ? (
+              // If logged in, show "Go to App"
+              <NavLink
+                to="/dozewell/soundplayer"
+                onClick={handleToggleMenu}
+                className="text-purple-dozewell border border-purple-dozewell text-center rounded-3xl py-2"
+                style={{ width: "140px" }}
+              >
+                Go to App
+              </NavLink>
+            ) : (
+              // If not logged in, show "Try for free"
+              <NavLink
+                to="/login"
+                onClick={handleToggleMenu}
+                className="text-purple-dozewell border border-purple-dozewell text-center rounded-3xl py-2"
+                style={{ width: "140px" }}
+              >
+                Try for free
+              </NavLink>
+            )}
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ const Newsletter = () => {
             style={{ borderRadius: "10px 0 0 10px" }}
           />
           <Link
-            to = "/userAuth"
+            to = "/login"
             className="bg-bg-primary text-white font-semibold text-base sm:text-lg px-6 py-4 md:w-auto hover:bg-purple-700 transition duration-300"
             style={{ borderRadius: "0 10px 10px 0" }}
           >

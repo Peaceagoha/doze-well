@@ -27,6 +27,27 @@ export default {
         "dozewell-gradient": "linear-gradient(to bottom, #7774A7, #302D40)",
         "hero-pattern": "url('/src/assets/100vh-Bg.png')",
       },
+      animation: {
+        shake: "shake 1s infinite",
+        "pulse-color": "pulse-color 2s infinite",
+        breathing: "breathing 3s ease-in-out infinite",
+      },
+      keyframes: {
+        shake: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "25%": { transform: "translateY(-5px)" },
+          "50%": { transform: "translateY(5px)" },
+          "75%": { transform: "translateY(-5px)" },
+        },
+        "pulse-color": {
+          "0%, 100%": { backgroundColor: "#d1d5db" },
+          "50%": { backgroundColor: "#7774A7" },
+        },
+        breathing: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.1)" },
+        },
+      },
     },
   },
   plugins: [],

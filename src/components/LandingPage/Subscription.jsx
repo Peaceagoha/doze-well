@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { FaHandHolding, FaHandHoldingUsd, FaHandHoldingHeart } from "react-icons/fa";
+import {
+  FaHandHolding,
+  FaHandHoldingUsd,
+  FaHandHoldingHeart,
+} from "react-icons/fa";
 import desktopPlayer from "../../assets/desktop-player.png";
 import mobilePlayer from "../../assets/mobile-player.png";
 import Box from "../../assets/box.png";
@@ -7,9 +11,15 @@ import Check from "../../assets/check.png";
 import { pricePlan } from "../../data/data";
 import { useSwipeable } from "react-swipeable";
 import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser, clearUser } from "../../store/user";
+import { auth } from "../../config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Subscription = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.users.currentUser);
   const [isTablet, setIsTablet] = useState(false);
 
   // Check if the screen is a tablet
@@ -25,6 +35,24 @@ const Subscription = () => {
     return () => window.removeEventListener("resize", checkScreenSize); // Cleanup
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(
+          setUser({
+            id: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+          })
+        );
+      } else {
+        dispatch(clearUser());
+      }
+    });
+
+    return () => unsubscribe();
+  }, [dispatch]);
+
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => console.log("Swiped Left"),
     onSwipedRight: () => console.log("Swiped Right"),
@@ -32,20 +60,36 @@ const Subscription = () => {
   });
 
   const handleNavigate = () => {
-    navigate("/userAuth");
+    if (currentUser) {
+      navigate("/dozewell/soundplayer"); // Navigate to sound player if logged in
+    } else {
+      navigate("/login"); // Navigate to login if logged out
+    }
   };
 
   return (
     <section className="text-white flex-row items-center justify-center px-6 py-10 sm:px-20 sm:py-24">
       <div className="m-auto">
-        <img src={desktopPlayer} className="md:block hidden" alt="" onClick={handleNavigate} />
-        <img src={mobilePlayer} className="md:hidden" alt="" onClick={handleNavigate} />
+        <img
+          src={desktopPlayer}
+          className="md:block hidden"
+          alt=""
+          onClick={handleNavigate}
+        />
+        <img
+          src={mobilePlayer}
+          className="md:hidden"
+          alt=""
+          onClick={handleNavigate}
+        />
       </div>
 
-      <main className="py-10 sm:py-24">
+      <main className="py-6 sm:py-2 mt-24">
         <div className="space-y-4">
           <h1 className="font-bold text-lg md:text-2xl">Subscription</h1>
-          <p className="sub__font text-base font-light">Never miss a good night's sleep</p>
+          <p className="sub__font text-base font-light">
+            Never miss a good night&apos;s sleep
+          </p>
         </div>
 
         {/* Wrapper for Swipeable Cards */}
@@ -69,13 +113,19 @@ const Subscription = () => {
             </div>
             <div className="space-y-4">
               {pricePlan.slice(0, 5).map((plan, i) => (
-                <div key={i} className="flex gap-2 items-center text-white mx-3">
+                <div
+                  key={i}
+                  className="flex gap-2 items-center text-white mx-3"
+                >
                   <img src={Check} alt="" />
                   <p className="sub__text font-small text-base">{plan.text}</p>
                 </div>
               ))}
             </div>
-            <button onClick={handleNavigate} className="sub__button bg-purple-dark-dozewell py-4 rounded-lg my-[120px]">
+            <button
+              onClick={handleNavigate}
+              className="sub__button bg-purple-dark-dozewell py-4 rounded-lg my-[120px]"
+            >
               Sign Up for Free
             </button>
           </div>
@@ -92,13 +142,19 @@ const Subscription = () => {
             </div>
             <div className="space-y-4">
               {pricePlan.slice(5, 11).map((plan, i) => (
-                <div key={i} className="flex gap-2 items-center text-white mx-3">
+                <div
+                  key={i}
+                  className="flex gap-2 items-center text-white mx-3"
+                >
                   <img src={Check} alt="" />
                   <p className="font-small text-l leading-7">{plan.text}</p>
                 </div>
               ))}
             </div>
-            <button onClick={handleNavigate} className="sub__button bg-purple-dark-dozewell ml-2 my-8 py-4">
+            <button
+              onClick={handleNavigate}
+              className="sub__button bg-purple-dark-dozewell ml-2 my-8 py-4"
+            >
               Start Free Trial
             </button>
           </div>
@@ -117,13 +173,19 @@ const Subscription = () => {
             </div>
             <div className="space-y-4 relative">
               {pricePlan.slice(11, 18).map((plan, i) => (
-                <div key={i} className="flex gap-2 items-center text-white relative">
+                <div
+                  key={i}
+                  className="flex gap-2 items-center text-white relative"
+                >
                   <img src={Check} alt="" className="relative" />
                   <p className="sub__font mx-3">{plan.text}</p>
                 </div>
               ))}
             </div>
-            <button onClick={handleNavigate} className="sub__button bg-purple-dark-dozewell py-4 my-5 rounded-lg">
+            <button
+              onClick={handleNavigate}
+              className="sub__button bg-purple-dark-dozewell py-4 my-5 rounded-lg"
+            >
               Start Free Trial
             </button>
           </div>

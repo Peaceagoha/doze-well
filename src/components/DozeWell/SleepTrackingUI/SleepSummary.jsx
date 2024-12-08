@@ -37,11 +37,14 @@ const sleepAnalysis = [
 
 const SleepSummaryPage = ({ className = "" }) => {
   return (
-    <section className="px-4 mt-4 sm:px-8 sm:mt-0">
+    <section
+      className="px-4 mt-4 sm:px-8 sm:mt-0"
+      style={{ overflow: "hidden" }}
+    >
       <Card className={`relative p-6 mb-6 ${className}`}>
-        <div className="text-gray-100 rounded-xl mx-auto space-y-6">
-          <div className="inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0">
-            Sleep Quality
+        <div className="text-gray-100 rounded-xl mx-auto space-y-6 ">
+          <div className="animate-pulse-color inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0">
+            Sleep Summary
           </div>
 
           {/* Sleep Summary Section */}
@@ -197,7 +200,7 @@ const SleepSummaryPage = ({ className = "" }) => {
           {/* Sleep Activities Section */}
           <div className="space-y-4 ">
             <div
-              className="inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0"
+              className="animate-pulse-color inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0"
               style={{ marginTop: "40px" }}
             >
               Sleep Activities
@@ -216,13 +219,13 @@ const SleepSummaryPage = ({ className = "" }) => {
             >
               <div className="bg-purple-dozewell-light flex justify-between items-center bg-teal-700 px-4 py-3">
                 <span className="font-medium text-white">Snoring</span>
-                <button className="bg-gray-light-dozewell font-semibold px-6 py-2 hover:bg-red-400 shadow-lg">
+                <button className="bg-gray-light-dozewell font-semibold px-6 py-2 hover:bg-gray-dark-dozewell hover:text-white shadow-lg">
                   View Clips
                 </button>
               </div>
               <div className="bg-purple-dozewell-light flex justify-between items-center bg-teal-700 px-4 py-3">
                 <span className="font-medium text-white">Sleep Talking</span>
-                <button className="bg-gray-light-dozewell font-semibold px-6 py-2 hover:bg-red-400 shadow-lg">
+                <button className="bg-gray-light-dozewell font-semibold px-6 py-2 hover:bg-gray-dark-dozewell hover:text-white shadow-lg">
                   View Clips
                 </button>
               </div>
@@ -231,7 +234,7 @@ const SleepSummaryPage = ({ className = "" }) => {
 
           <div className="space-y-4 ">
             <div
-              className="inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0"
+              className="animate-pulse-color inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0"
               style={{
                 marginTop: useMediaQuery({ maxWidth: 640 }) ? "250px" : "100px",
               }}

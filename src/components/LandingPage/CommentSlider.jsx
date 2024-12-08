@@ -60,7 +60,9 @@ const CommentSlider = () => {
             className="bg-purple-dark-dozewell text-white flex h-full flex-col gap-8 items-start px-6 py-12 mr-4 leading-8"
           >
             <h1 className="font-bold text-lg">{slide.title}</h1>
-            <p className="font-light leading-8 opacity-75 text-sm">{slide.body}</p>
+            <p className="font-light leading-8 opacity-75 text-sm">
+              {slide.body}
+            </p>
             <div className="flex items-center gap-4">
               <img
                 src={slide.image}

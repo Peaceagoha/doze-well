@@ -8,7 +8,7 @@ const SleepQualityScore = ({ className = "" }) => {
     <section className="px-4 mt-4 sm:px-8 sm:mt-0">
       <Card className={`p-6 mb-6 ${className}`}>
         <div className="flex justify-between items-center">
-          <div className="text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold">
+          <div className="animate-pulse-color text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold">
             Sleep Quality
           </div>
           <div className="flex space-x-1 sm:space-x-2">

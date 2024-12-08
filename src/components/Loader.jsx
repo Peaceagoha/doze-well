@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useStore } from "@nanostores/react";
-import { $bg } from "../store.js";
+import { $bg } from "../store/store.js";
 
 const Preloader = () => {
   const bg = useStore($bg);

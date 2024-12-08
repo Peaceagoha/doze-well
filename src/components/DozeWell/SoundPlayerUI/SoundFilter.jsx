@@ -5,25 +5,25 @@ const SoundFilter = () => {
         <button className="bg-purple-dozewell-accent text-white py-4 px-6 rounded-xl w-full ">
           All
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           Noise
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           Waves
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           Meditations
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           ASMR
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           Stories
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           Nature
         </button>
-        <button className="border border-white text-white py-4 px-8 rounded-xl w-full  ">
+        <button className="hover:bg-purple-dozewell-accent hover:border-0 transition duration-200 border border-white text-white py-4 px-8 rounded-xl w-full  ">
           Soundscape
         </button>
       </div>

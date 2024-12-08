@@ -7,6 +7,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .bg-hero {
   background-image: url("assets/bg-hero.png");
   background-size: cover;
@@ -142,7 +147,7 @@ html {
   padding-top: 40px;
   border-radius: 40px;
 }
-.sub__card__right{
+.sub__card__right {
   width: 22% !important;
   height: 580px;
   padding: 19px;
@@ -150,84 +155,85 @@ html {
   padding-top: 40px;
   border-radius: 40px;
 }
-.sub__text{
+.sub__text {
   font-size: 14px;
   font-weight: bold;
   opacity: 90%;
 }
-.icon{
+.icon {
   transform: translateX(-60px);
   font-size: 30px;
 }
-@media (min-width: 768px){
+@media (min-width: 768px) {
   .sub__card,
   .sub__card__middle,
   .sub__card__right {
-    width: 100% !important; 
+    width: 100% !important;
     max-width: 300px !important;
-    gap: 30px; 
-    margin-left: auto; 
+    gap: 30px;
+    margin-left: auto;
     margin-right: auto;
     padding-top: 20px !important;
   }
-  .nav{
-    width: 600px;
-    margin-left: 60px;
+  .nav {
+    left: 0;
+    right: 0;
   }
 }
 @media (max-width: 768px) {
-  
-  .sub__button{
+  .sub__button {
     margin-left: 13px;
   }
   .sub__card__middle {
-    max-width: 380px; 
+    max-width: 380px;
   }
   .sub__bg {
-    padding: 16px; 
+    padding: 16px;
   }
   .icon {
-    position: relative; 
+    position: relative;
   }
   .sub__text {
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 767px){
-  .sub{
+@media (max-width: 767px) {
+  .sub {
     gap: 25px;
   }
   .sub__card,
   .sub__card__middle,
-  .sub__card__right{
-    width: 100% !important; 
-    max-width: 300px !important; 
+  .sub__card__right {
+    width: 100% !important;
+    max-width: 300px !important;
     gap: 30px;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     padding-top: 20px !important;
   }
-  .sub__card__right{
+  .sub__card__right {
     width: 50%;
   }
-  .nav{
-    margin-left: 10px;
-    width: 300px;
+  .nav {
+    right: 0;
+    left: 0;
+    max-width: 330px;
   }
 }
-@media (min-width: 1024px){
-  .sub__card, .sub__card__middle, .sub__card__right {
-   
+@media (min-width: 1024px) {
+  .sub__card,
+  .sub__card__middle,
+  .sub__card__right {
     margin: 20px; /* Remove any margins */
     padding: 25px; /* Optional: Adjust padding to your preference */
   }
-  .sub{
+  .sub {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .nav{
+  .nav {
     width: 80%;
   }
 }
