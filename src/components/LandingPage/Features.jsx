@@ -13,7 +13,7 @@ const Features = () => {
       </h1>
 
       {/* Features Main Content */}
-      <main className="flex flex-col sm:flex-row gap-16 sm:gap-8 pt-20 px-6 sm:px-12 max-w-6xl mx-auto md:gap-6">
+      <main className="flex flex-col items-center sm:flex-row gap-16 sm:gap-8 pt-20 px-6 sm:px-12 max-w-6xl mx-auto md:gap-6">
         {featuresData.map((feature, i) => (
           <div
             key={i}

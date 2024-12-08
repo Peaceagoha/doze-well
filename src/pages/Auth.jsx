@@ -98,13 +98,11 @@ const Auth = () => {
       );
 
       toggleLoginModal();
-
-      // console.log("User signed up:");
     } catch (error) {
       dispatch(
         showToast({
           type: "error",
-          message: ("Error signing up:", error.code, error.message),
+          message: ("Error signing up:", error),
         })
       );
       // console.error("Error signing up:", error.code, error.message);
@@ -135,20 +133,47 @@ const Auth = () => {
 
       navigate("/dozewell/soundplayer");
     } catch (error) {
+      let errorMessage = "An error occurred during login";
+
+      // Handle specific Firebase authentication errors
+      switch (error.code) {
+        case "auth/invalid-credential":
+          errorMessage = "Invalid email or password";
+          break;
+        case "auth/user-not-found":
+          errorMessage = "No user found with this email";
+          break;
+        case "auth/wrong-password":
+          errorMessage = "Incorrect password";
+          break;
+        case "auth/too-many-requests":
+          errorMessage = "Too many login attempts. Please try again later";
+          break;
+        default:
+          errorMessage = error.message || "Login failed. Please try again";
+      }
+
       dispatch(
         showToast({
-          type: "success",
-          message: ("Error signing in:", error.code, error.message),
+          type: "error",
+          message: errorMessage,
         })
       );
-      // console.error("Error signing in:", error.code, error.message);
     }
   };
 
-  const handlePasswordReset = () => {
-    const email = prompt("Please enter your email");
-    sendPasswordResetEmail(auth, email);
-    alert("Email sent! Check your inbox for password reset instructions.");
+  const handlePasswordReset = async () => {
+    try {
+      const email = prompt("Please enter your email");
+
+      if (email) {
+        await sendPasswordResetEmail(auth, email);
+        alert("Email sent! Check your inbox for password reset instructions.");
+      }
+    } catch (error) {
+      console.error("Password reset error:", error);
+      alert("Failed to send password reset email. Please try again.");
+    }
   };
 
   return (
@@ -359,7 +384,7 @@ const Auth = () => {
                       onChange={(e) => handleLoginCredentials(e)}
                     />
                     <div
-                      className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-400 hover:text-gray-200"
+                      className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-400 hover:text-black"
                       onClick={togglePasswordVisibility}
                     >
                       {isPasswordVisible ? (
@@ -376,9 +401,12 @@ const Auth = () => {
                     Login
                   </button>
 
-                  <p onClick={handlePasswordReset} className="text-right mt-2">
+                  <span
+                    onClick={handlePasswordReset}
+                    className="mt-2 text-right block ml-auto cursor-pointer"
+                  >
                     Forgot Password
-                  </p>
+                  </span>
                 </form>
               </div>
             </div>

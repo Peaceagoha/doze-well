@@ -69,16 +69,16 @@ const Subscription = () => {
 
   return (
     <section className="text-white flex-row items-center justify-center px-6 py-10 sm:px-20 sm:py-24">
-      <div className="m-auto">
+      <div className="flex justify-center items-center">
         <img
           src={desktopPlayer}
-          className="md:block hidden"
+          className="md:block hidden max-w-full"
           alt=""
           onClick={handleNavigate}
         />
         <img
           src={mobilePlayer}
-          className="md:hidden"
+          className="md:hidden max-w-full"
           alt=""
           onClick={handleNavigate}
         />

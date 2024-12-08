@@ -82,7 +82,7 @@ export const sliderData = [
   },
   {
     title: "Sleep Tracking",
-    body: "Adjusting to personal needs, this tool can effectively mask disruptive noises, creating a serene environment that enhances both focus and relaxation.It helps promote a sense of calm, allowing users to achieve deeper, more restful sleep."
+    body: "Adjusting to personal needs, this tool can effectively mask disruptive noises, creating a serene environment that enhances both focus and relaxation.It helps promote a sense of calm, allowing users to achieve deeper, more restful sleep.",
   },
   {
     title: "Basic Analytics",
@@ -96,7 +96,7 @@ export const commentsData = [
     body: "I used to wake up multiple times during the night and couldn't figure out why. This app helped me identify patterns in my sleep and adjust my bedtime routine. Now, I'm getting uninterrupted sleep, and my energy levels during the day have skyrocketed. I can’t recommend it enough!",
     image: Avatar1,
     name: "Emma Y.",
-},
+  },
   {
     title: "Peaceful Nights!",
     body: "As a busy professional, stress often keeps me up at night. This app has been a lifesaver! The calming sounds and bedtime stories help me unwind and relax after a hectic day. I can't imagine going to bed without it now. Highly recommend it to anyone looking to improve their sleep.",
@@ -112,28 +112,28 @@ export const commentsData = [
   {
     title: "Better Sleep, Better Life!",
     body: "As a working mom, I barely had time to think about my sleep health. This app made it so easy to track my rest and create healthier habits. The insights and tips are spot-on, and I've noticed a huge improvement in my mood and productivity. It's a lifesaver!",
-    image: "https://i.pravatar.cc/150?img=7", 
+    image: "https://i.pravatar.cc/150?img=7",
     name: "Emily T.",
-},
-{
-  title: "The Ultimate Sleep Companion!",
-  body: "I never realized how much my inconsistent sleep schedule was affecting my health until I started using this app. The gentle reminders and tailored suggestions have made all the difference. I now wake up feeling energized and ready to take on the day. This app is a game-changer!",
-  image: "https://i.pravatar.cc/150?img=8", // Replace with the appropriate image variable
-  name: "Michael B.",
-},
+  },
+  {
+    title: "The Ultimate Sleep Companion!",
+    body: "I never realized how much my inconsistent sleep schedule was affecting my health until I started using this app. The gentle reminders and tailored suggestions have made all the difference. I now wake up feeling energized and ready to take on the day. This app is a game-changer!",
+    image: "https://i.pravatar.cc/150?img=8", // Replace with the appropriate image variable
+    name: "Michael B.",
+  },
 
-{
-  title: "A Life-Changing Experience!",
-  body:"I had no idea how much my sleep was affecting my day-to-day life until I started tracking it with this app. The insights and recommendations it provided helped me make small, yet impactful changes to my nightly routine. After following its guidance. It’s been a life-changing experience!",
-  image: "https://i.pravatar.cc/150?img=5", // Avatar link
-  name: "Olivia M.",
-},
+  {
+    title: "A Life-Changing Experience!",
+    body: "I had no idea how much my sleep was affecting my day-to-day life until I started tracking it with this app. The insights and recommendations it provided helped me make small, yet impactful changes to my nightly routine. After following its guidance. It’s been a life-changing experience!",
+    image: "https://i.pravatar.cc/150?img=5", // Avatar link
+    name: "Olivia M.",
+  },
   {
     title: "My Productivity Skyrocketed!",
     body: "I never realized how much a consistent sleep routine could truly transform my life until I started using this app. After tracking my patterns and making small adjustments, I've noticed a huge improvement. This app has been an invaluable tool, and I’m incredibly grateful for it!",
     image: "https://i.pravatar.cc/150?img=23",
     name: "Sophia L.",
-},
+  },
 ];
 
 export const featuresData = [
@@ -190,7 +190,8 @@ export const soundList = [
     name: "Birds",
     image: Birds,
     category: "birds",
-    soundFile: "https://peaceagoha.github.io/doze-well/assets/air conditioner.mp3",
+    soundFile:
+      "https://peaceagoha.github.io/doze-well/assets/air conditioner.mp3",
   },
   {
     id: 2,
@@ -227,7 +228,8 @@ export const soundList = [
     name: "Autumn Forest",
     image: AutumnForest,
     category: "autumn forest",
-    soundFile: "https://peaceagoha.github.io/doze-well/assets/autumn forest.mp3",
+    soundFile:
+      "https://peaceagoha.github.io/doze-well/assets/autumn forest.mp3",
   },
 
   {
@@ -235,7 +237,8 @@ export const soundList = [
     name: "Water Dripping",
     image: WaterDripping,
     category: "water dripping",
-    soundFile: "https://peaceagoha.github.io/doze-well/assets/Water Drop 01.mp3",
+    soundFile:
+      "https://peaceagoha.github.io/doze-well/assets/Water Drop 01.mp3",
   },
   {
     id: 8,
@@ -279,7 +282,8 @@ export const soundList = [
     name: "Deep Bass",
     image: DeepBass,
     category: "deep bass",
-    soundFile: "https://peaceagoha.github.io/doze-well/assets/Deep Bass Wave.mp3",
+    soundFile:
+      "https://peaceagoha.github.io/doze-well/assets/Deep Bass Wave.mp3",
   },
   {
     id: 14,
@@ -293,7 +297,8 @@ export const soundList = [
     name: "Brain Scanner",
     image: BrainScanner,
     category: "brain scanner",
-    soundFile: "https://peaceagoha.github.io/doze-well/assets/Deep Bass Wave.mp3",
+    soundFile:
+      "https://peaceagoha.github.io/doze-well/assets/Deep Bass Wave.mp3",
   },
 ];
 

@@ -3,6 +3,7 @@ node_modules/
 
 # Build output
 build/
+dist/
 
 # Logs
 npm-debug.log*
@@ -19,3 +20,6 @@ pnpm*
 .vscode/
 .idea/
 .DS_Store
+
+#folder
+.firebase/

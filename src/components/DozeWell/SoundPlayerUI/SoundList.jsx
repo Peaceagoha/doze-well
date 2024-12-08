@@ -1,6 +1,3 @@
-// import { useMediaQuery } from "react-responsive";
-// import { soundList } from "../../../data/data";
-
 import { useState, useRef } from "react";
 import { soundList } from "../../../data/data";
 import PlayerController from "./PlayerController";
