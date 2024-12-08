@@ -37,9 +37,12 @@ const sleepAnalysis = [
 
 const SleepSummaryPage = ({ className = "" }) => {
   return (
-    <section className="px-4 mt-4 sm:px-8 sm:mt-0">
+    <section
+      className="px-4 mt-4 sm:px-8 sm:mt-0"
+      style={{ overflow: "hidden" }}
+    >
       <Card className={`relative p-6 mb-6 ${className}`}>
-        <div className="text-gray-100 rounded-xl mx-auto space-y-6">
+        <div className="text-gray-100 rounded-xl mx-auto space-y-6 ">
           <div className="inline-block text-sm sm:text-lg rounded-full bg-gray-light-dozewell px-4 py-1 sm:px-6 sm:py-2 font-semibold text-left ml-0">
             Sleep Quality
           </div>

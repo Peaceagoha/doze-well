@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { useStore } from "@nanostores/react";
-import { $bg } from "../../../store";
+import { $bg } from "../../../store/store";
 import { BACKGROUNDS } from "../../../data/data";
 
 const BackgroundDropdown = () => {

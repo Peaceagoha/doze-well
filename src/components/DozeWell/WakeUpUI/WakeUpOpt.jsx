@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { ChevronDown } from "lucide-react";
 import BackgroundDropdown from "./BackgroundDropdown";
 import Card from "../Card";
 

@@ -16,7 +16,7 @@ const ImageSlider = () => {
 
     // Cleanup the interval when the component is unmounted
     return () => clearInterval(intervalId);
-  }, []);
+  }, [images.length]);
 
   const handleSwipe = (direction) => {
     if (direction === "LEFT") {
@@ -34,10 +34,7 @@ const ImageSlider = () => {
   });
 
   return (
-    <div
-      className="relative w-full max-w-4xl mx-auto mt-8"
-      {...swipeHandlers}
-    >
+    <div className="relative w-full max-w-4xl mx-auto mt-8" {...swipeHandlers}>
       {/* Image Section */}
       <div className="overflow-hidden relative">
         <div
@@ -68,8 +65,7 @@ const ImageSlider = () => {
 
       {/* Title, Body, and Avatar Section */}
       <div className="flex justify-center mt-4 space-x-4">
-        <div className="flex flex-col items-center justify-center space-y-2">
-        </div>
+        <div className="flex flex-col items-center justify-center space-y-2"></div>
       </div>
 
       {/* Navigation Dots Section */}

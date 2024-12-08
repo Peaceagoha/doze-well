@@ -1,17 +1,14 @@
-import { useState, useEffect } from "react";
-import { Navigate, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, Outlet } from "react-router-dom";
 import Nav from "../components/DozeWell/Nav";
-import SleepTrackingUI from "../components/DozeWell/SleepTrackingUI";
-import SoundPlayerUI from "../components/DozeWell/SoundPlayerUI";
-import WakeUpUI from "../components/DozeWell/WakeUpUI";
 import { useStore } from "@nanostores/react";
-import { $bg } from "../store.js";
+import { $bg } from "../store/store.js";
 import Preloader from "../components/Loader.jsx";
 
 const DozeWell = () => {
   const bg = useStore($bg);
-  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,16 +27,7 @@ const DozeWell = () => {
       <Nav />
 
       {/* Dynamic Pages */}
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <Routes>
-          <Route path="/" element={<Navigate to="soundplayer" replace />} />
-          <Route path="/soundplayer" element={<SoundPlayerUI />} />
-          <Route path="/sleep-tracking" element={<SleepTrackingUI />} />
-          <Route path="/wake-up" element={<WakeUpUI />} />
-        </Routes>
-      )}
+      {isLoading ? <Preloader /> : <Outlet />}
     </div>
   );
 };
