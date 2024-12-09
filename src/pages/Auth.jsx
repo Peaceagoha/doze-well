@@ -303,7 +303,7 @@ const Auth = () => {
               <img
                 src={sleepImage}
                 alt="Sleeping illustration"
-                className="w-3/4 h-auto animate-shake"
+                className="w-3/4 h-auto"
               />
             </main>
           </div>
